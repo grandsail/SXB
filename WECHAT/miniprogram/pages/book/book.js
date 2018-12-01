@@ -6,7 +6,7 @@ data: {
   num: '',
   phonenum:'',
   name: '',
-  address: '123',
+  address: '',
   state: 1
   },
 
