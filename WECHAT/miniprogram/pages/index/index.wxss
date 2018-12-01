@@ -1,137 +1,120 @@
-/**index.wxss**/
-
-page {
-  background: #f6f6f6;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.container{
+    background:#fff
 }
 
-.userinfo, .uploader, .tunnel {
-  margin-top: 40rpx;
-  height: 140rpx;
-  width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: none;
-  border-right: none;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  transition: all 300ms ease;
+.form_group{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin:20rpx;
+      line-height: 60rpx}
+
+      .form_group text{
+    
+    width:89rpx;
+    color: #000
 }
 
-.userinfo-avatar {
-  width: 100rpx;
-  height: 100rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-  background-size: cover;
-  background-color: white;
+.form_blank{
+  margin-bottom: 48rpx;
+}
+.form_group input,
+.form_group picker{
+    width:460rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    padding:0rpx 20rpx;
+}
+.form_group .sendmsg_input{
+    width:280rpx;
+    margin-right:14rpx;
+}
+.form_group button{
+    font-size:30rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    border:1px dotted #fff;
+    background:white;
+    padding:0rpx;
+    margin:0rpx;
+    outline:none;
+    color:#000;
+}
+.placeholder_style{
+    font-family:'微软雅黑';
+    color:#adadad;
+
+}
+.tapLogin{
+    width:600rpx;
+    background:#d24a58;
+    font-size: 32rpx;
+    color:rgb(150, 37, 37);
+    border-radius: 0rpx;
+    margin:40rpx 0rpx 10rpx;
 }
 
-.userinfo-avatar:after {
-  border: none;
+.ar_cont{
+    padding:20rpx 60rpx;
+    font-size:30rpx;
+    background: #fff;
+    margin-bottom:-16rpx;
+    line-height: 45rpx;
+    color:#666666;
+}
+.ar_cont .ar_cont_h1{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+    margin: 0rpx;
+    
 }
 
-.userinfo-nickname {
-  font-size: 32rpx;
-  color: #007aff;
-  background-color: white;
-  background-size: cover;
+.form_group{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+    margin-top: 38rpx;
 }
 
-.userinfo-nickname::after {
-  border: none;
+.ar_date_time{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0rpx 0rpx 60rpx;
+    margin-top: 14rpx;
 }
-
-.uploader, .tunnel {
-  height: auto;
-  padding: 0 0 0 40rpx;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
+.ar_date_time .ar_date,
+.ar_date_time .ar_time{
+    width:47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
-
-.uploader-text, .tunnel-text {
-  width: 100%;
-  line-height: 52px;
-  font-size: 34rpx;
-  color: #007aff;
+.ar_date_time .ar_date image{
+    width:34rpx;
+    height:38rpx;
+    
 }
-
-.uploader-container {
-  width: 100%;
-  height: 400rpx;
-  padding: 20rpx 20rpx 20rpx 0;
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+.ar_date_time .ar_time image{
+    width:45rpx;
+    height:38rpx;
 }
-
-.uploader-image {
-  width: 100%;
-  height: 360rpx;
+.ar_date_time picker{
+    width:180rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    padding:6rpx 20rpx;
+    margin-left:68rpx;
+    height: 46rpx;
 }
-
-.tunnel {
-  padding: 0 0 0 40rpx;
-}
-
-.tunnel-text {
-  position: relative;
-  color: #222;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.tunnel-text:first-child {
-  border-top: none;
-}
-
-.tunnel-switch {
-  position: absolute;
-  right: 20rpx;
-  top: -2rpx;
-}
-
-.disable {
-  color: #888;
-}
-
-.service {
-  position: fixed;
-  right: 40rpx;
-  bottom: 40rpx;
-  width: 140rpx;
-  height: 140rpx;
-  border-radius: 50%;
-  background: linear-gradient(#007aff, #0063ce);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.service-button {
-  position: absolute;
-  top: 40rpx;
-}
-
-.service:active {
-  box-shadow: none;
-}
-
-.request-text {
-  padding: 20rpx 0;
-  font-size: 24rpx;
-  line-height: 36rpx;
-  word-break: break-all;
+.input_msg{
+    border:1px solid #ddd; 
+    border-radius:8rpx;
+    padding:0rpx 10rpx;
 }

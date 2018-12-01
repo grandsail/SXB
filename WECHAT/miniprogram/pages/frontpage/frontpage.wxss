@@ -1,0 +1,62 @@
+/* miniprogram/pages/frontpage/frontpage.wxss */
+page {
+  background-color: #F6F6F6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%
+}
+.mainPage{
+  background-color: #BDD7EE;
+  height: 90%;
+}
+.bottomLine{
+  flex-direction: row;
+  height:10%;
+}
+.choiceL{
+  width: 375rpx;
+  float:left;
+  height: 100%;
+}
+.choiceR{
+  width: 375rpx;
+  float:right;
+  height: 100%;
+}
+.bottomBottonL{
+  height: 100%;
+  background-color: #BDD7EE;
+}
+.bottomBottonR{
+  height: 100%;
+  background-color: #F6F6F6;
+}
+.order{
+  height: 100%;
+  background-color: #F6F6F6;
+  width: 100%;
+}
+.halfheightbox{
+  height: 50%;
+  width: 100%;
+}
+.halfheightbox.text{
+  display: flex;
+  align-items: center;
+}
+.halfheightbox.state{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.halfheightbox.state.yes{
+  background-color: rgb(169, 209, 142);
+}
+.halfheightbox.state.no{
+  background-color: rgb(244, 177, 131);
+}
+.halfwidthbox{
+  height: 100%;
+  width: 50%;
+}

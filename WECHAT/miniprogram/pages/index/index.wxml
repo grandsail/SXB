@@ -1,19 +1,27 @@
-<!--index.wxml-->
+
 <view class="container">
 
-  <!-- 用户 openid -->
+ <!-- 用户 openid -->
   <view class="userinfo">
+ 
     <button 
       open-type="getUserInfo" 
       bindgetuserinfo="onGetUserInfo"
       class="userinfo-avatar"
       style="background-image: url({{avatarUrl}})"
     ></button>
+   <wxs module="sample">
+   /*
     <view>
       <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
     </view>
+     */
+  </wxs>
   </view>
-
+ 
+ 
+ <wxs module="sample">
+   /*
 
   <!-- 上传图片 -->
   <view class="uploader">
@@ -39,5 +47,84 @@
       <text>快速新建云函数</text>
     </navigator>
   </view>
+ 
+ */
+  </wxs>
+
+<view class="form_blank">
+
+</view>
+
+
+<view class="form_group">
+        <text class="ar_cont_h2">单号:</text>
+        <input type="number" placeholder="请输入快递单号 " placeholder-class="placeholder_style" name="data_num" value="{{data_num}}" focus="{{focus}}" bindinput='confirm' bindblur='userNumInput'/>
+    </view>
+
+ <!--输入时间-->
+ <view class="ar_cont">
+        <text class="ar_cont_h1">取件时间:</text>
+        <view class="ar_date_time">
+            <view class="ar_date">
+                
+                <picker mode="date" placeholder="选择日期" value="{{date}}" start="2018-11-14" end="2019-11-14" bindchange="bindDateChange" >
+                    <view>
+                        {{date}}
+                    </view>
+                </picker>
+            </view>
+
+            <view class="ar_time">
+                
+                <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+                    <view>
+                        {{time}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+</view>
+
+
+
+
+
+
+<view class="form_group">
+        <text class="ar_cont_h3">电话:</text>
+        <input type="number" placeholder="请输入取件人电话 " placeholder-class="placeholder_style" name="data_phone" value="{{}}"    maxlength='11' bindinput='confirm' bindblur='userPhoneNumInput'/>
+    </view>
+
+
+    <view class="form_group">
+        <text class="ar_cont_h4">姓名:</text>
+        <input type="text" placeholder="请输入收件人姓名" placeholder-class="placeholder_style" name="data_name" value="{{data_name}}" focus="{{focus}}" bindinput='confirm' bindblur='userNameInput' />
+    </view>
+
+    <view class="form_group">
+         <text class="ar_cont_h5">地址:</text>
+        <input type="text" placeholder="请输入预约取件地点 " placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
+    </view>
+
+
+
+
+
+
+
+
+
+
+<view  class='tapLogin' >
+<button bindtap="clickMe" >提交</button>
+ 
+</view>
+
+<view class="btn-area"  bindtap='tonavigate'>
+  跳转到新页面
+ 
+  <!-- <navigator url="/index/index" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator> -->
+</view>
+
 
 </view>
