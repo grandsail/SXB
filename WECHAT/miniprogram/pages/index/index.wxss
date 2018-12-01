@@ -1,0 +1,120 @@
+.container{
+    background:#fff
+}
+
+.form_group{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin:20rpx;
+      line-height: 60rpx}
+
+      .form_group text{
+    
+    width:89rpx;
+    color: #000
+}
+
+.form_blank{
+  margin-bottom: 48rpx;
+}
+.form_group input,
+.form_group picker{
+    width:460rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    padding:0rpx 20rpx;
+}
+.form_group .sendmsg_input{
+    width:280rpx;
+    margin-right:14rpx;
+}
+.form_group button{
+    font-size:30rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    border:1px dotted #fff;
+    background:white;
+    padding:0rpx;
+    margin:0rpx;
+    outline:none;
+    color:#000;
+}
+.placeholder_style{
+    font-family:'微软雅黑';
+    color:#adadad;
+
+}
+.tapLogin{
+    width:600rpx;
+    background:#d24a58;
+    font-size: 32rpx;
+    color:rgb(150, 37, 37);
+    border-radius: 0rpx;
+    margin:40rpx 0rpx 10rpx;
+}
+
+.ar_cont{
+    padding:20rpx 60rpx;
+    font-size:30rpx;
+    background: #fff;
+    margin-bottom:-16rpx;
+    line-height: 45rpx;
+    color:#666666;
+}
+.ar_cont .ar_cont_h1{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+    margin: 0rpx;
+    
+}
+
+.form_group{
+    font-size: 32rpx;
+    font-weight: 600;
+    line-height: 64rpx;
+    color:#000;
+    margin-top: 38rpx;
+}
+
+.ar_date_time{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0rpx 0rpx 60rpx;
+    margin-top: 14rpx;
+}
+.ar_date_time .ar_date,
+.ar_date_time .ar_time{
+    width:47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ar_date_time .ar_date image{
+    width:34rpx;
+    height:38rpx;
+    
+}
+.ar_date_time .ar_time image{
+    width:45rpx;
+    height:38rpx;
+}
+.ar_date_time picker{
+    width:180rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    padding:6rpx 20rpx;
+    margin-left:68rpx;
+    height: 46rpx;
+}
+.input_msg{
+    border:1px solid #ddd; 
+    border-radius:8rpx;
+    padding:0rpx 10rpx;
+}
