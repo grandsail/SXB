@@ -121,7 +121,7 @@
 </view>
 
 <view class="btn-area"  bindtap='tonavigate'>
-  跳转到新页面
+  
  
   <!-- <navigator url="/index/index" open-type="switchTab" hover-class="other-navigator-hover">切换 Tab</navigator> -->
 </view>
