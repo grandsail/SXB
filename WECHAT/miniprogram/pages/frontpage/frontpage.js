@@ -109,7 +109,12 @@ Page({
 
   changeToIndex: function() {
     wx.navigateTo({
-      url: '../book/book',
-    })
+      url: '../book/book'
+    }),
+      wx.navigateTo({
+        ur2: 'pages/test1/test1'
+      })
   }
+  
+
 })
