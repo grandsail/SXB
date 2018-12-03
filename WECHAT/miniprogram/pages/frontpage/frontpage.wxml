@@ -1,43 +1,74 @@
 <!--miniprogram/pages/frontpage/frontpage.wxml-->
-
-<scroll-view scroll-y='true' class='mainPage'>
-  <block wx:for="{{queryResult}}">
-    <view style='height:22%; padding:2% 2% 1% 2%;'>
-      <view class='order'>
-        <view style='height:74%;width:100%;display:flex;flex-direction:row;'>
-          <view class='halfwidthbox'>
-            <view class='halfheightbox.text'>快递号:{{item.postnum}}</view>
-            <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>{{item.box}}号柜{{item.car}}号车</view>
-            <view wx:else class='halfheightbox.text'>请预约收件时间地点</view>
+<block wx:if="{{step==1}}">
+  <scroll-view scroll-y='true' class='mainPage'>
+    <block wx:for="{{queryResult}}">
+      <view style='height:22%; padding:2% 2% 1% 2%;'>
+        <view class='order'>
+          <view style='height:74%;width:100%;display:flex;flex-direction:row;'>
+            <view class='halfwidthbox'>
+              <view class='halfheightbox.text'>快递号:{{item.postnum}}</view>
+              <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>{{item.box}}号柜{{item.car}}号车</view>
+              <view wx:else class='halfheightbox.text'>请预约收件时间地点</view>
+            </view>
+            <view class='halfwidthbox'>
+              <view wx:if="{{item.state == 1}}"class='halfheightbox.state.yes'>已预约</view>
+              <view wx:elif="{{item.state == 2}}"class='halfheightbox.state.yes'>已预约</view>
+              <view wx:else class='halfheightbox.state.no'>未预约</view>
+              <view wx:if="{{item.state == 1}}"class='halfheightbox.state.yes'>已出发</view>
+              <view wx:elif="{{item.state == 2}}"class='halfheightbox.state.no'>未出发</view>
+              <view wx:else class='halfheightbox.state.no'>未出发</view>
+            </view>
           </view>
-          <view class='halfwidthbox'>
-            <view wx:if="{{item.state == 1}}"class='halfheightbox.state.yes'>已预约</view>
-            <view wx:elif="{{item.state == 2}}"class='halfheightbox.state.yes'>已预约</view>
-            <view wx:else class='halfheightbox.state.no'>未预约</view>
-            <view wx:if="{{item.state == 1}}"class='halfheightbox.state.yes'>已出发</view>
-            <view wx:elif="{{item.state == 2}}"class='halfheightbox.state.no'>未出发</view>
-            <view wx:else class='halfheightbox.state.no'>未出发</view>
-          </view>
+          <view wx:if="{{item.state != 3}}" style='height:26%;width:100%'>预计送达时间:{{item.date}}{{item.time}}  </view>
+          <!-- <text>快递号:\n\n几号柜几号车:\n\n预计送达时间:几年几月几日xx:xx</text> -->
         </view>
-        <view wx:if="{{item.state != 3}}" style='height:26%;width:100%'>预计送达时间:{{item.date}}{{item.time}}</view>
-        <!-- <text>快递号:\n\n几号柜几号车:\n\n预计送达时间:几年几月几日xx:xx</text> -->
       </view>
-    </view>
-  </block>
-    <view style='height:24%; padding:2% 2% 1% 2%;' bindtap='changeToIndex'>
-      <view class='order'>
-        <image style = 'width:44%; height:100%; margin-left:28%'src='../source/plus.jpg'></image>
+    </block>
+      <view style='height:24%; padding:2% 2% 1% 2%;' bindtap='changeToIndex'>
+        <view class='order'>
+          <image style = 'width:44%; height:100%; margin-left:28%'src='../source/plus.jpg'></image>
+        </view>
       </view>
+  </scroll-view>
+</block>  
+
+<block wx:if="{{step==2}}">
+  <view style='height=90%'>
+    <view class="container">
+      <view class="userinfo">
+        <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <block wx:else>
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"       mode="cover"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+      </view>
+      <view class="usermotto">
+        <text class="user-motto">{{motto}}</text>
+      </view>
+      <view class='shezhi-button'> 
+      <navigator url="../infor/infor" open-type="navigate" >
+          <text>设置</text>
+        </navigator>
+        </view>
+        <view class='adress-button'> 
+      <navigator url="../infor/infor" open-type="navigate" >
+          <text>常用收件地址</text>
+        </navigator>
+        </view>
+        <view class='yuyue-button'> 
+      <navigator url="../infor/infor" open-type="navigate" >
+          <text>预约记录</text>
+        </navigator>
+        </view>
     </view>
-</scroll-view>
-
-
+  </view>
+</block>
 <!-- 底部按钮 -->
 <view class = "bottomLine">
   <view class='choiceL'>
-    <button class='bottomBottonL' style='{{status_left}}' bindtap='changeColorL'>我的快件</button>
+    <button class='bottomBottonL' style='{{status_left}}' bindtap='LEFT'>我的快件</button>
   </view>
   <view class='choiceR'>
-    <button class='bottomBottonR' style='{{status_right}}' bindtap='changeColorR'>个人中心</button>    
+    <button class='bottomBottonR' style='{{status_right}}' bindtap='RIGHT'>个人中心</button>    
   </view>
 </view>

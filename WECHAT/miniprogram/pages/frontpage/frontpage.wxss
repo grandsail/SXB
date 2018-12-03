@@ -60,3 +60,69 @@ page {
   height: 100%;
   width: 50%;
 }
+
+.container {
+position: absolute;
+width: 100%;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+background-color: rgb(248, 253, 218) ;
+box-sizing: border-box;
+height: 90%
+} 
+.shezhi-button{
+border: 1px solid #70bcf6; 
+border-radius: 2px; 
+background-color: white;
+position: absolute;
+right: 10px;
+top: 15px;
+}
+.yuyue-button{
+border: 1px solid #70bcf6; 
+border-radius: 2px; 
+background-color: white;
+position: absolute;
+left: 120px;
+top: 150px;
+}
+.adress-button{
+border: 1px solid #70bcf6; 
+border-radius: 2px; 
+background-color: white;
+position: absolute;
+left: 100px;
+top: 120px;
+}
+
+.userinfo-avatar {
+position: absolute;
+border: 1px solid #70bcf6; 
+width: 128rpx;
+height: 128rpx;
+left: 10px;
+top:10px;
+border-radius: 50%;
+flex-direction: row;
+align-items: flex-end;
+}
+
+.userinfo-nickname {
+position: absolute;
+top: 30px;
+left: 70px;
+color: #aaa(248, 253, 218);
+padding: 1rpx 0;
+}
+
+.usermotto {
+  position: absolute;
+  width: 128rpx;
+height: 128rpx;
+
+top:120rpx;
+left: 140rpx;
+margin-top:0rpx;
+color: #aaa;
+}
