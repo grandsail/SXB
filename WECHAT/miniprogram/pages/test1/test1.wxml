@@ -1,5 +1,4 @@
 <!--index.wxml-->
-<view style='height=90%'>
   <view class="container">
     <view class="userinfo">
       <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
@@ -24,4 +23,3 @@
       </navigator>
       </view>
   </view>
-</view>

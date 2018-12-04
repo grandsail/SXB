@@ -7,6 +7,7 @@ align-items: center;
 justify-content: space-between;
 background-color: rgb(248, 253, 218) ;
 box-sizing: border-box;
+height: 90%;
 } 
 .shezhi-button{
 border: 1px solid #70bcf6; 
@@ -35,7 +36,6 @@ top: 120px;
 
 .userinfo-avatar {
 position: absolute;
-border: 1px solid #70bcf6; 
 width: 128rpx;
 height: 128rpx;
 left: 10px;
