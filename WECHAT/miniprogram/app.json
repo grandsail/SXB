@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/frontpage/frontpage",
-    "pages/book/book",
+
     "pages/test1/test1"
   ],
   "window": {
