@@ -1,25 +1,28 @@
 <!--index.wxml-->
-  <view class="container">
-    <view class="userinfo">
-      <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
-      <open-data type="userNickName" class="userinfo-nickname"></open-data>
-    </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view>
-    <view class='shezhi-button'> 
-    <navigator url="../infor/infor" open-type="navigate" >
-        <text>设置</text>
-      </navigator>
-      </view>
-      <view class='adress-button'> 
-    <navigator url="../infor/infor" open-type="navigate" >
-        <text>常用收件地址</text>
-      </navigator>
-      </view>
-      <view class='yuyue-button'> 
-    <navigator url="../infor/infor" open-type="navigate" >
-        <text>预约记录</text>
-      </navigator>
-      </view>
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"       mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
   </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class='shezhi-button'> 
+  <navigator url="../infor/infor" open-type="navigate" >
+      <text>设置</text>
+    </navigator>
+    </view>
+     <view class='adress-button'> 
+  <navigator url="../infor/infor" open-type="navigate" >
+      <text>常用收件地址</text>
+    </navigator>
+    </view>
+    <view class='yuyue-button'> 
+  <navigator url="../infor/infor" open-type="navigate" >
+      <text>预约记录</text>
+    </navigator>
+    </view>
+</view>

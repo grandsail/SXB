@@ -60,8 +60,8 @@ page {
   height: 100%;
   width: 50%;
 }
-
 /* 以上为卢轶轩写 */
+
 /* 以下为王静缘写 */
 .shezhi-button{
 border: 1px solid #70bcf6; 
