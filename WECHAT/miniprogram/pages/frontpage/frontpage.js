@@ -119,5 +119,11 @@ Page({
     wx.navigateTo({
       url: '../recievingloc/recievingloc'
     })
+  },
+  //点“常用收件地点”跳转至recievingloc页面
+  changeTohistory: function () {
+    wx.navigateTo({
+      url: '../history/history'
+    })
   }
 })
