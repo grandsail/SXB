@@ -37,7 +37,7 @@
    <view style=' background-color: #BDD7EE;height: 90%;'>
    <view class='userinfo'>
     <!-- 头像-->
-     <view style='width: 30%;height: 30%;border-radius: 50%;margin:3%;overflow:hidden;' bindtap='changeToPersonal'>
+     <view style='width: 30%;height: 30%;border-radius: 50%;margin:3%;overflow:hidden;' bindtap='changeToUserinfo'>
       <open-data type="userAvatarUrl" ></open-data>
     </view>
     <!-- 昵称--> 
@@ -49,8 +49,8 @@
 
   <!--功能键-->
 <view class='function'>
- <view class = 'set-adress'>
-   <button style='height:20%;margin:5%;' bindtap='set-adress'>常用收件地点 </button>
+ <view>
+   <button style='height:20%;margin:5%;' bindtap='changeToRecievingloc'>常用收件地点 </button>
  </view>
  <view class='record'>
    <button style='height:20%;margin:5%;'  bindtap='record'>预约记录</button>
