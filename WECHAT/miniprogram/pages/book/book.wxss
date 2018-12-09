@@ -32,7 +32,7 @@
     margin-right:14rpx;
 }
 .form_group button{
-    font-size:30rpx;
+    font-size:84%;
     height:60rpx;
     line-height: 60rpx;
     border:1px dotted #fff;
@@ -48,37 +48,37 @@
 
 }
 .tapLogin{
-    width:600rpx;
+    width:80%;
     background:#d24a58;
-    font-size: 32rpx;
+    font-size: 120%;
     color:rgb(150, 37, 37);
-    border-radius: 0rpx;
-    margin:40rpx 0rpx 10rpx;
+    border-radius: 0%;
+    margin:10%
 }
 
 .ar_cont{
-    padding:20rpx 60rpx;
-    font-size:30rpx;
+    padding:6% ;
+    font-size:75%;
     background: #fff;
-    margin-bottom:-16rpx;
-    line-height: 45rpx;
+    margin-bottom:-8%;
+    line-height: 160%;
     color:#666666;
 }
 .ar_cont .ar_cont_h1{
-    font-size: 32rpx;
+    font-size: 110%;
     font-weight: 600;
-    line-height: 64rpx;
+    line-height: 200%;
     color:#000;
-    margin: 0rpx;
+    margin: 0%;
     
 }
 
 .form_group{
-    font-size: 32rpx;
+    font-size: 84%;
     font-weight: 600;
-    line-height: 64rpx;
+    line-height: 200%;
     color:#000;
-    margin-top: 38rpx;
+    margin-top: 8%;
 }
 
 .ar_date_time{
@@ -86,8 +86,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin:0rpx 0rpx 60rpx;
-    margin-top: 14rpx;
+    margin:2%;
+    margin-top: 4%;
 }
 .ar_date_time .ar_date,
 .ar_date_time .ar_time{
