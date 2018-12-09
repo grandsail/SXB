@@ -13,6 +13,7 @@ page {
 .bottomLine{
   flex-direction: row;
   height:10%;
+  background-color: #BDD7EE;
 }
 .choiceL{
   width: 375rpx;
@@ -63,44 +64,12 @@ page {
 /* 以上为卢轶轩写 */
 
 /* 以下为王静缘写 */
-.shezhi-button{
-border: 1px solid #70bcf6; 
-border-radius: 2px; 
-background-color: white;
-position: absolute;
-right: 10px;
-top: 15px;
-}
-.yuyue-button{
-border: 1px solid #70bcf6; 
-border-radius: 2px; 
-background-color: white;
-position: absolute;
-left: 120px;
-top: 150px;
-}
-
-.userinfo-avatar {
-width: 20%;
-height: 20%; 
-display:block; 
-overflow:hidden; 
-border-radius: 50%;
-margin-top:2%;
-margin-left: 2%;
-}
-
-
 .userinfo{
-  display: colomn;
+font-size:130%;
+background-color: #F6F6F6;
+flex-direction: row;
+display: flex;
 }
-.usermotto {
-  position: absolute;
-  width: 128rpx;
-height: 128rpx;
-
-top:120rpx;
-left: 140rpx;
-margin-top:0rpx;
-color: #aaa;
+.function{
+  background-color: #BDD7EE;
 }

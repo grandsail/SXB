@@ -105,6 +105,13 @@ Page({
     wx.navigateTo({
       url: '../book/book'
     })
+  },
+
+  //按头像跳转至personal页面
+  changeToPersonal: function () {
+    wx.navigateTo({
+      url: '../test1/test1'
+    })
   }
 
 })
