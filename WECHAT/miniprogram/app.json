@@ -1,13 +1,14 @@
 {
   "pages": [
     "pages/frontpage/frontpage",
-    "pages/book/book"
+    "pages/book/book",
+    "pages/recievingloc/recievingloc",
+    "pages/userinfo/userinfo"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTextStyle": "black"
   }
 }

@@ -1,0 +1,4 @@
+    <view class='title'>常用收件地址</view>
+    <block wx:for="{{queryResult}}">
+      <view class='locItem'>RecievingLoc:{{item.RecievingLoc}}</view>
+    </block>
