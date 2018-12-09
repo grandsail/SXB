@@ -1,7 +1,7 @@
 // miniprogram/pages/frontpage/frontpage.js
 Page({
   onLoad: function (options) {
-    // this.onAdd()
+    // 获取初始订单信息
     this.refreshData()
   },
 
@@ -22,6 +22,7 @@ Page({
   },
 
   onPullDownRefresh: function () {
+    //下拉刷新订单
     this.refreshData()
     wx.stopPullDownRefresh()
   },
@@ -35,10 +36,12 @@ Page({
   },
 
   data: {
-    leftbutton: 1 ,
-    rightbutton: 0,
+    leftbutton: 1 , //左按钮指示 1：当前位于左按钮页面 0：不位于此页面
+    rightbutton: 0, //右按钮指示 1：当前位于右按钮页面 0：不位于此页面
+    step:1 //换页面指示 1：我的快件 2：个人中心
   },
 
+  //刷新数据，访问数据库，寻找与本机_openid相同的订单，存储在queryResult数组内
   refreshData: function() {
     const db = wx.cloud.database()
     db.collection('orders').where({
@@ -56,26 +59,8 @@ Page({
     })
   },
 
-  // onAdd: function () {
-  //   const db = wx.cloud.database()
-  //   db.collection('orders').add({
-  //     data: {
-  //       box: 1,
-  //       car: 1,
-  //       number: 12345678,
-  //       state: 3,
-  //       time: 201712281150
-  //     },
-  //     success: res => {
-  //       console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-  //     },
-  //     fail: err => {
-  //       console.error('[数据库] [新增记录] 失败：', err)
-  //     }
-  //   })
-  // },
-
-  changeColorL: function() {
+//按下左按钮会发生跳转和变色
+  LEFT: function() {
     if(this.data.leftbutton == 0)
     {
       this.setData({
@@ -90,9 +75,13 @@ Page({
         this.data.rightbutton = 0
       }
     }
+    //跳转至我的快件
+    this.setData({
+      step:1
+    })
   },
-
-  changeColorR: function () {
+//按下右按钮会发生跳转和变色
+  RIGHT: function () {
     if (this.data.rightbutton == 0) {
       this.setData({
         status_right: 'background-color:#BDD7EE'
@@ -105,11 +94,24 @@ Page({
         this.data.leftbutton = 0
       }
     }
+    //跳转至个人中心
+    this.setData({
+      step: 2
+    })
   },  
 
+//按加号跳转至book页面
   changeToIndex: function() {
     wx.navigateTo({
-      url: '../book/book',
+      url: '../book/book'
+    })
+  },
+
+  //按头像跳转至personal页面
+  changeToPersonal: function () {
+    wx.navigateTo({
+      url: '../test1/test1'
     })
   }
+
 })
