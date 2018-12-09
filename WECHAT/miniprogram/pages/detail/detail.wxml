@@ -1,0 +1,34 @@
+<view wx:for="{{queryResult}}"> 
+<view class="form_group">
+        <text class="ar_cont_h2">单号:{{item.postnum}}</text>
+    </view>
+
+ <!--时间-->
+ <view class="form_group">
+        <text class="ar_cont_h1">取件时间:{{item.date}} {{item.time}}</text>
+       
+  </view>
+
+
+
+
+
+
+  <view class="form_group">
+        <text class="ar_cont_h3">电话:{{item.phonenum}}</text>
+      
+    </view>
+
+
+    <view class="form_group">
+        <text class="ar_cont_h4">姓名:{{item.name}}</text>
+        
+    </view>
+
+    <view class="form_group">
+         <text class="ar_cont_h5">地址:{{item.address}}</text>
+        
+    </view>
+</view>
+
+

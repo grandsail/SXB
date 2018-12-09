@@ -1,0 +1,26 @@
+/* miniprogram/pages/test/test.wxss */
+page {
+  background-color: #BDD7EE;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%
+}
+.bjc{
+padding:2% 2% 1% 2%;
+height: 90%
+}
+
+.tygs{
+  height: 100%;
+  background-color: #F6F6F6;
+  width: 100%
+}
+.c{
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 200%;
+
+}
