@@ -26,7 +26,7 @@ page {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5rpx;
+  border-radius: 5%;
   margin-top: 5%;
   margin-left: 10%;
   margin-right: 10%;
