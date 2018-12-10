@@ -10,7 +10,7 @@
 	},
 	"appid": "wxd27b5e39dbcd4566",
 	"projectname": "Github-miniprogram",
-	"libVersion": "2.4.1",
+	"libVersion": "2.2.5",
 	"condition": {
 		"search": {
 			"current": -1,

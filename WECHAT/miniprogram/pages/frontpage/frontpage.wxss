@@ -13,7 +13,6 @@ page {
 .bottomLine{
   flex-direction: row;
   height:10%;
-  background-color: #BDD7EE;
 }
 .choiceL{
   width: 375rpx;
@@ -60,16 +59,4 @@ page {
 .halfwidthbox{
   height: 100%;
   width: 50%;
-}
-/* 以上为卢轶轩写 */
-
-/* 以下为王静缘写 */
-.userinfo{
-font-size:130%;
-background-color: #F6F6F6;
-flex-direction: row;
-display: flex;
-}
-.function{
-  background-color: #BDD7EE;
 }
