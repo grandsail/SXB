@@ -9,7 +9,7 @@ data: {
   address: '',
   state: 1
   },
-
+//picker选择时间日期
 bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
@@ -23,6 +23,7 @@ bindTimeChange: function (e) {
     })
   }
 ,
+//获取输入的数据
 userNumInput: function (e) {
     // console.log(e.detail.value)设置用户名
     this.setData({
@@ -48,7 +49,7 @@ userAddressInput: function (e) {
       userAddress: e.detail.value
     })
   },
-
+//提交订单并跳转到首页
 clickMe: function (e) {
   const db = wx.cloud.database()
     
@@ -69,19 +70,24 @@ clickMe: function (e) {
     success: res => {
       // 在返回结果中会包含新创建的记录的 _id
       wx.showToast({
-        title: '上传成功',
+        title: '预约成功',
       })
       console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
     },
     fail: err => {
       wx.showToast({
         icon: 'none',
-        title: '上传失败'
+        title: '预约失败'
       })
       console.error('[数据库] [新增记录] 失败：', err)
     }
 
     })
   },
+  toFrontpage:function(){
+    wx.navigateTo({
+      url: '../frontpage/frontpage',
+    })
+  }
 
   })
