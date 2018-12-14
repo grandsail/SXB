@@ -7,14 +7,14 @@ page {
   height: 100%
 }
 .bjc{
-padding:2% 2% 1% 2%;
-height: 90%
+height: 100%
 }
 
 .tygs{
   height: 100%;
   background-color: #F6F6F6;
-  width: 100%
+  width: 100%;
+  border-radius: 5%;
 }
 .c{
   height: 80%;
@@ -22,5 +22,5 @@ height: 90%
   display: flex;
   align-items: center;
   line-height: 200%;
-
+  margin: 3%;
 }
