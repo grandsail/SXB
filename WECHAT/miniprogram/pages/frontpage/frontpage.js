@@ -64,13 +64,13 @@ Page({
     if(this.data.leftbutton == 0)
     {
       this.setData({
-        status_left: 'background-color:#BDD7EE'
+        status_left: 'background-color:#e7b75d'
       })
       this.data.leftbutton = 1
       if(this.data.rightbutton == 1)
       {
         this.setData({
-          status_right: 'background-color:#F6F6F6'
+          status_right: 'background-color: #F6F6F6'
         })
         this.data.rightbutton = 0
       }
@@ -84,7 +84,7 @@ Page({
   RIGHT: function () {
     if (this.data.rightbutton == 0) {
       this.setData({
-        status_right: 'background-color:#BDD7EE'
+        status_right: 'background-color:#e7b75d'
       })
       this.data.rightbutton = 1
       if (this.data.leftbutton == 1) {
