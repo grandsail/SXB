@@ -1,20 +1,26 @@
 <!--miniprogram/pages/test/test.wxml-->
 <view class="bjc" bindtap='detail' >
   <block wx:for="{{queryResult}}">
-    <view style='height:22%; padding:2% 2% 1% 2%;' >
+    <view style='height:24%; padding:2% 2% 1% 2%;' >
       <view class='tygs'>
-          <view> 
-            <view  class='c' >快递号为： {{item.postnum}}  </view>
-          </view>
+          <view style='display: flex; flex-direction: row;'> 
+            <view  class='c' >快递号为：  </view>
+            <text class='c1'>{{item.postnum}} </text>
+            </view>
 
-          <view >
-            <view class='c'>位置：{{item.box}}号柜{{item.car}}号车</view>
+          <view style='display: flex; flex-direction: row;'> 
+            <view class='c'>位置：</view>
+            <text class='c1'>{{item.box}}号柜{{item.car}}号车 </text>
+             </view>
           <!--快递柜号-->
-          </view>
+          
+          
 
-          <view >
-            <view class='c'> 送达时间：{{item.date}} {{item.time}} </view>
+           <view style='display: flex; flex-direction: row;'> 
+            <view class='c'> 送达时间：</view>
+            <text class='c1'>{{item.date}} {{item.time}}</text>
           </view>
+         
       </view>
     </view>
   </block>
