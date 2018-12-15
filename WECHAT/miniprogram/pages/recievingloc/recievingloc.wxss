@@ -1,22 +1,21 @@
 /* pages/frontpage/userinfo/userinfo.wxss */
 page {
   background-color:  white;
-  display: flex;
-  flex-direction: column;
+  
   justify-content: flex-start;
   height: 100%
 }
-.title{
-  width: 90%;
-  height: 5%;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5rpx;
-  margin-top: 3%;
-  margin-left: 5%;
-  margin-right: 5%;
+
+.add{
+    width: 25%;
+    height: 15%;
+    float: right;
+    
+    position: fixed;
+    bottom: 5%;
+    right: 7%;  
+   
+   
 }
 
 .locItem{

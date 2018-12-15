@@ -1,4 +1,10 @@
-    <view class='title'>常用收件地址</view>
+    
+    <view bindtap='ToUserinfo'>
+        <image class='add' src='../source/plus1.png'></image>
+    </view>
+     
+  
     <block wx:for="{{queryResult}}">
       <view class='locItem'>RecievingLoc:{{item.RecievingLoc}}</view>
     </block>
+    
