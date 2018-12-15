@@ -10,7 +10,7 @@
               <text style=' color:  #c0871c;margin-left:3%;'> {{item.postnum}}</text>
               </view>
 
-              <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>位置：
+              <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>货箱：
                <text style=' color:  #c0871c;margin-left:3%;'>{{item.box}}号柜{{item.car}}号车</text>  
               </view>
 

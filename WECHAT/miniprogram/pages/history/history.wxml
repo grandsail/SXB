@@ -13,7 +13,7 @@
             </view>
 
           <view style='display: flex; flex-direction: row;'> 
-            <view class='c'>位置：</view>
+            <view class='c'>货箱：</view>
             <text class='c1'>{{item.box}}号柜{{item.car}}号车 </text>
              </view>
           <!--快递柜号-->
