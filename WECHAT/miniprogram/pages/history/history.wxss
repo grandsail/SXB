@@ -1,26 +1,39 @@
 /* miniprogram/pages/test/test.wxss */
 page {
-  background-color: #BDD7EE;
+  background-color:  white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%
 }
 .bjc{
-padding:2% 2% 1% 2%;
-height: 90%
+height: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.into{
+  text-align:center;
+  height: 4%;
+  margin: 3%;
+  font-size: 100%;
+  border-radius: 7%;
+  background-color: #e7b75d;
 }
 
 .tygs{
   height: 100%;
   background-color: #F6F6F6;
-  width: 100%
+  width: 100%;
+  border-radius: 5%;
 }
 .c{
-  height: 80%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  line-height: 200%;
-
+  margin-left: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.c1{
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color:  #c0871c;
 }

@@ -1,5 +1,5 @@
 page {
-  background-color: #BDD7EE;
+  background-color:  white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -21,40 +21,36 @@ page {
 .form_group{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    margin:20rpx;
-      line-height: 60rpx}
-
-      .form_group text{
-    
-    width:89rpx;
-    color: #000
+    border: 2% solid #e7b75d;
+    margin:3%;
+}
+.ar_cont_h4{
+margin-top: 2%;
+}
+.ar_cont_h3{
+margin-top: 2%;
+}
+.ar_cont_h5{
+margin-top: 2%;
+}
+.form_group input{
+  height: 30%;
+  width: 83%;
+  border-width:1rpx;
+  border-style:solid;
+  border-color:   #ddd;
+  border-radius: 5%;
+  margin: 2%;
+  padding:0% 0%;
+  font-size: 120%;
+  background-color:  #F6F6F6;
+  
 }
 
-.form_blank{
-  margin-bottom: 48rpx;
-}
-.form_group input,
-.form_group picker{
-    width:460rpx;
-    border:1px solid #ddd;
-    border-radius:8rpx;
-    height:60rpx;
-    line-height: 60rpx;
-    padding:0rpx 20rpx;
-}
-.form_group .sendmsg_input{
-    width:280rpx;
-    margin-right:14rpx;
-}
+
 .form_group button{
-    font-size:30rpx;
-    height:60rpx;
-    line-height: 60rpx;
-    border:1px dotted #fff;
+  
     background:white;
-    padding:0rpx;
-    margin:0rpx;
-    outline:none;
     color:#000;
+    padding:20% 40%;
 }

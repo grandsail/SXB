@@ -56,4 +56,10 @@ Page({
       }
     })
   },
+  //按加号跳转页面
+  ToUserinfo: function () {
+    wx.navigateTo({
+      url: '../userinfo/userinfo'
+    })
+  },
 })
