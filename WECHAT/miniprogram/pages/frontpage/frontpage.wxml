@@ -1,6 +1,6 @@
 <!-- 我的快件页面 卢轶轩已完成-->
 <block wx:if="{{step==1}}">
-  <scroll-view scroll-y='true' class='mainPage'>
+  <view class='mainPage'>
     <block wx:for="{{queryResult}}">
       <view style='height:22%; padding:2% 2% 1% 2%;'>
         <view class='order'>
@@ -37,7 +37,8 @@
           <image style = 'width:44%; height:100%; margin-left:28%'src='../source/plus.jpg'></image>
         </view>
       </view>
-  </scroll-view>
+      <view style='height:10%;'></view>
+  </view>
 </block>  
 
 <!-- 个人中心页面 王静缘需修改-->
