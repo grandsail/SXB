@@ -62,4 +62,8 @@ Page({
       url: '../userinfo/userinfo'
     })
   },
+
+  getID(){
+    console.log(arguments);
+  }
 })

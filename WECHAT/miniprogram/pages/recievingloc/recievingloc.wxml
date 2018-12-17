@@ -3,6 +3,6 @@
         <image class='add' src='../source/plus1.png'></image>
     </view>
     <block wx:for="{{queryResult}}">
-      <view class='locItem'>RecievingLoc:{{item.RecievingLoc}}</view>
+      <view id='{{item.RecievingLoc}}' class='locItem' bindtap='getID'>RecievingLoc:{{item.RecievingLoc}}</view>
     </block>
     
