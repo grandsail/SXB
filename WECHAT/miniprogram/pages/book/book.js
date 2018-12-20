@@ -64,7 +64,7 @@ clickMe: function (e) {
     },
     success: res => {
       this.setData({
-        back: JSON.stringify(res.result)
+        back:res.result
       })
       console.log('调用云函数成功: ', res)
       db.collection('orders').add({
@@ -75,8 +75,8 @@ clickMe: function (e) {
           phonenum: this.data.userPhoneNum,
           name: this.data.userName,
           address: this.data.userAddress,
-          car: a,
-          box: b,
+          car: this.data.back.carNum,
+          box: this.data.back.carBox,
           state: 1
         },
 
@@ -102,38 +102,7 @@ clickMe: function (e) {
       console.error('调用云函数失败：', err)
     }
   })
-
-  db.collection('orders').add({
-    data: {
-      date: this.data.date,
-      time:this.data.time,
-      postnum: this.data.userNum,
-      phonenum:this.data.userPhoneNum,
-      name:this.data.userName,
-      address:this.data.userAddress,
-      car: 1,
-      box:1,
-      state:1
-      },
-
-
-    success: res => {
-      // 在返回结果中会包含新创建的记录的 _id
-      wx.showToast({
-        title: '预约成功',
-      })
-      console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-    },
-    fail: err => {
-      wx.showToast({
-        icon: 'none',
-        title: '预约失败'
-      })
-      console.error('[数据库] [新增记录] 失败：', err)
-    }
-
-    })
-  },
+},
   toFrontpage:function(){
     wx.navigateTo({
       url: '../frontpage/frontpage',
