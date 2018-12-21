@@ -1,5 +1,9 @@
 // miniprogram/pages/frontpage/frontpage.js
 Page({
+  data:{
+    print:0
+  },
+
   onLoad: function (options) {
     // 获取初始订单信息
     this.refreshData()
@@ -35,10 +39,6 @@ Page({
 
   },
 
-  data: {
-
-  },
-
   //刷新数据，访问数据库，寻找与本机_openid相同的订单，存储在queryResult数组内
   refreshData: function () {
     const db = wx.cloud.database()
@@ -63,7 +63,9 @@ Page({
     })
   },
 
-  getID(){
-    console.log(arguments);
+  SelectItem(e){
+    this.setData({
+      print: e.currentTarget.dataset.id
+    })
   }
 })

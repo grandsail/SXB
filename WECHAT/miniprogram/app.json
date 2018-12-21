@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/recievingloc/recievingloc",
     "pages/frontpage/frontpage",
     "pages/book/book",
-    "pages/recievingloc/recievingloc",
+    
     "pages/userinfo/userinfo",
     "pages/history/history",
     "pages/detail/detail"

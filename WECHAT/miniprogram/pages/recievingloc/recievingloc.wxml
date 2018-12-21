@@ -1,8 +1,7 @@
-    
-    <view bindtap='ToUserinfo'>
-        <image class='add' src='../source/plus1.png'></image>
-    </view>
-    <block wx:for="{{queryResult}}">
-      <view id='{{item.RecievingLoc}}' class='locItem' bindtap='getID'>{{item.RecievingLoc}}</view>
-    </block>
-    
+<view bindtap='ToUserinfo'>
+  <image class='add' src='../source/plus1.png'></image>
+</view>
+<block wx:for="{{queryResult}}">
+  <view class='locItem' bindtap='SelectItem' data-id='{{item._id}}'>{{item.RecievingLoc}}</view>
+</block>
+<view wx:if='{{print}}'>{{print}}</view>
