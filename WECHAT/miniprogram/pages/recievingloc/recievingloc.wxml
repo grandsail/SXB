@@ -5,6 +5,6 @@
      
   
     <block wx:for="{{queryResult}}">
-      <view class='locItem'>RecievingLoc:{{item.RecievingLoc}}</view>
+      <view class='locItem'>{{item.RecievingLoc}}</view>
     </block>
     
