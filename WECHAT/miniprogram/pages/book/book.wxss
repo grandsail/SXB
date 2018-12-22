@@ -1,23 +1,44 @@
 .container{
     background:#fff
 }
+.ar_picker{
+    width:100%;
+    font-size:30rpx;
+    color:#000;
+    background: #efeff4;
+    margin:0;
+}
+.ar_picker .ar_picker_wrap{
+    width: 670rpx;
+    background: #fff url(../../images/arrow.png) no-repeat right center;
+    background-size:25rpx 14rpx;
+    background-position:650rpx;
+    border-radius:20rpx;
+    padding:20rpx;
+    margin:20rpx auto;
+}
 
+
+.form_blank{
+  margin-bottom: 14%;
+}
 .form_group{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
     margin:8%;
+    font-size: 88%;
+    font-weight: 600;
+    line-height: 172%;
+    color:#000;
+    margin-top: 8%;
       }
-
-      .form_group text{
+.form_group text{
     
     width:-4%;
     color: #000
 }
 
-.form_blank{
-  margin-bottom: 14%;
-}
 .form_group input,
 .form_group picker{
     width:460rpx;
@@ -64,15 +85,6 @@
     margin: -4%;
     
 }
-
-.form_group{
-    font-size: 88%;
-    font-weight: 600;
-    line-height: 172%;
-    color:#000;
-    margin-top: 8%;
-}
-
 .ar_date_time{
     width:86%;
     display: flex;

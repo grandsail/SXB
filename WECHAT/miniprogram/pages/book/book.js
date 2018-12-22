@@ -1,3 +1,6 @@
+var app = getApp()
+var myData = require('../../utils/data')
+
 Page({
 
 data: {
@@ -23,6 +26,16 @@ bindTimeChange: function (e) {
     })
   }
 ,
+
+
+  bindAddrPickerChange: function (e) {
+    console.log('Addrpicker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      addrIndex: e.detail.value
+    })
+  },
+  
+
 //获取输入的数据
 userNumInput: function (e) {
     // console.log(e.detail.value)设置用户名
