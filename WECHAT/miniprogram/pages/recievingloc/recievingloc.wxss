@@ -21,7 +21,7 @@ page {
 .locItem{
   width: 80%;
   height: 10%;
-  background-color: white;
+  background-color:gold;
   display: flex;
   justify-content: center;
   align-items: center;
