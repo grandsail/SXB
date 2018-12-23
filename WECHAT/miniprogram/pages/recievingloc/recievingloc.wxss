@@ -1,27 +1,32 @@
 /* pages/frontpage/userinfo/userinfo.wxss */
 page {
   background-color:  white;
-  
   justify-content: flex-start;
   height: 100%
+}
+
+.addbutton{
+  width: 20%;
+  height: 5%;
+  background-color:darksalmon;
+  display: flex;
+  justify-content: center;
+  margin-left: 70%;
 }
 
 .add{
     width: 25%;
     height: 15%;
     float: right;
-    
     position: fixed;
     bottom: 5%;
     right: 7%;  
-   
-   
 }
 
 .locItem{
   width: 80%;
   height: 10%;
-  background-color: white;
+  background-color:beige;
   display: flex;
   justify-content: center;
   align-items: center;

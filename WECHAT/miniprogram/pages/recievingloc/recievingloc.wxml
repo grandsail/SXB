@@ -1,10 +1,12 @@
-    
-    <view bindtap='ToUserinfo'>
-        <image class='add' src='../source/plus1.png'></image>
-    </view>
-     
-  
-    <block wx:for="{{queryResult}}">
-      <view class='locItem'>RecievingLoc:{{item.RecievingLoc}}</view>
-    </block>
-    
+<block wx:if="{{IsAdd==1}}">
+  <view>添加新的收件地点：</view>
+  <input class='input' type="text" bindblur='userAddressInput'/>
+  <view class='addbutton' bindtap="clickMe" >提交</view>
+</block>
+
+<view bindtap='AddRecievingLoc'>
+  <image class='add' src='../source/plus1.png'></image>
+</view>
+<block wx:for="{{queryResult}}">
+  <view class='locItem' bindtap='SelectItem' data-id='{{item._id}}'>{{item.RecievingLoc}}</view>
+</block>
