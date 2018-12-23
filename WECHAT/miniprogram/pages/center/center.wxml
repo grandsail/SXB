@@ -1,13 +1,5 @@
 <!-- 个人中心页面 王静缘需修改-->
- 
-  
-<block wx:if="{{step==2}}">
-
-
-</block>
-
-
-<view style=' background-color:  white;height: 90%;'>
+<view style=' background-color:  white;height:100%;'>
    <view class='userinfo'>
     <!-- 头像-->
      <view style='width: 30%;height: 30%;border-radius: 50%;margin:3%;overflow:hidden;' bindtap='changeToUserinfo'>
@@ -30,12 +22,3 @@
 </view>
 </view>
 
-<!-- 两个按钮 卢轶轩已完成-->
-<view class = "bottomLine">
-  <view class='choiceL'>
-    <button class='bottomBottonL' style='{{status_left}}' bindtap='LEFT'>我的快件</button>
-  </view>
-  <view class='choiceR'>
-    <button class='bottomBottonR' style='{{status_right}}' bindtap='changeToCenter'>个人中心</button>    
-  </view>
-</view>

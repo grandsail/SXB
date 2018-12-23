@@ -44,12 +44,4 @@
 
 
 
-<!-- 两个按钮 卢轶轩已完成-->
-<view class = "bottomLine">
-  <view class='choiceL'>
-    <button class='bottomBottonL' style='{{status_left}}' bindtap='LEFT'>我的快件</button>
-  </view>
-  <view class='choiceR'>
-    <button class='bottomBottonR' style='{{status_right}}' bindtap='changeToCenter'>个人中心</button>    
-  </view>
-</view>
+

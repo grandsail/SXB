@@ -21,11 +21,7 @@ Page({
 
   },
 
-  onPullDownRefresh: function () {
-    //下拉刷新订单
-    this.refreshData()
-    wx.stopPullDownRefresh()
-  },
+  
 
   onReachBottom: function () {
 
@@ -35,9 +31,12 @@ Page({
 
   },
 
+ 
+ 
+
 //按加号跳转至book页面
 changeToIndex: function() {
-  wx.navigateTo({
+  wx.redirectTo({
     url: '../book/book'
   })
 },

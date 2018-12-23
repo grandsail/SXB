@@ -14,5 +14,22 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#e7b75d",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "rgb(143, 127, 94)",
+    "selectedColor": "#e7b75d",
+    
+    "list": [
+      {
+        "pagePath": "pages/frontpage/frontpage",
+        "text": "我的快件"
+        
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "个人中心"
+        
+      }
+    ]
   }
 }
