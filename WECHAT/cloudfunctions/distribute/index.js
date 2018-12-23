@@ -6,14 +6,13 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const carInfo = await db.collection('cars').get()
-  let openid = event.userInfo.openId
-  let carNum = 0
-  let carBox = 0
+  var openid = event.userInfo.openId
+  var carNum = 0
+  var carBox = 0
 
   for (var i = 0; i < 24; i++) {
     if (event.time > carInfo.data[i].timedown && event.time <= carInfo.data[i].timeup) 
     {
-      console.log(i)
       const update = await db.collection('cars').doc(carInfo.data[i]._id).update({
         data: {
           isUse: true,
@@ -23,10 +22,8 @@ exports.main = async (event, context) => {
           adress: event.adress
         }
       })
-      carNum = i
+      carNum = i + 1
       carBox = carInfo.data[i].now
-      console.log(carNum)
-      console.log(carBox)
       break
     }
   }
