@@ -4,11 +4,12 @@
     "pages/book/book",
     "pages/recievingloc/recievingloc",
     "pages/userinfo/userinfo",
+    "pages/updateuserinfo/updateuserinfo",
     "pages/history/history",
     "pages/detail/detail"
 
   ],
-  "window": {
+  "window": { 
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#e7b75d",
