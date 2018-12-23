@@ -1,45 +1,22 @@
-// miniprogram/pages/frontpage/frontpage.js
+// miniprogram/pages/recievingloc/recievingloc.js
 Page({
+  data:{
+    IsAdd:0,
+    address: '',
+  },
+
   onLoad: function (options) {
-    // 获取初始订单信息
+    // 获取初始收件地点信息
     this.refreshData()
   },
 
-  onReady: function () {
-
-  },
-
-  onShow: function () {
-
-  },
-
-  onHide: function () {
-
-  },
-
-  onUnload: function () {
-
-  },
-
   onPullDownRefresh: function () {
-    //下拉刷新订单
+    //下拉刷新常用收件地点
     this.refreshData()
     wx.stopPullDownRefresh()
   },
 
-  onReachBottom: function () {
-
-  },
-
-  onShareAppMessage: function () {
-
-  },
-
-  data: {
-
-  },
-
-  //刷新数据，访问数据库，寻找与本机_openid相同的订单，存储在queryResult数组内
+  //刷新数据，访问数据库，寻找与本机_openid相同的收件地点记录，存储在queryResult数组内
   refreshData: function () {
     const db = wx.cloud.database()
     db.collection('recievingloc').where({
@@ -56,10 +33,56 @@ Page({
       }
     })
   },
-  //按加号跳转页面
-  ToUserinfo: function () {
-    wx.navigateTo({
-      url: '../userinfo/userinfo'
+
+  //选中点击的收件地点记录
+  SelectItem(e){
+    this.setData({
+      //print: e.currentTarget.dataset.id
+    })
+  },
+
+  AddRecievingLoc(e){
+    var a = this.data.IsAdd;
+    a = (a + 1) %2;
+    this.setData({
+      IsAdd:a
+    })
+  },
+
+  userAddressInput: function (e) {
+
+    this.setData({
+      userAddress: e.detail.value
+    })
+  },
+  
+  clickMe: function (e) {
+    const db = wx.cloud.database()
+
+    db.collection('recievingloc').add({
+      data: {
+        RecievingLoc: this.data.userAddress
+      },
+
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        wx.showToast({
+          title: '上传成功',
+        })
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '上传失败'
+        })
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+
+    })
+
+    this.setData({
+      IsAdd:0
     })
   },
 })
