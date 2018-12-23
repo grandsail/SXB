@@ -1,34 +1,38 @@
-<view wx:for="{{queryResult}}"> 
-<view class="form_group">
-        <text class="ar_cont_h2">单号:{{item.postnum}}</text>
+
+<!--miniprogram/pages/test/test.wxml-->
+<view class="bjc">
+
+  <!--加个详细信息的按钮-->
+
+  <block wx:for="{{queryResult}}" >
+    <view >
+      <view class='tygs' >
+          <view style='display: flex; flex-direction: row;' > 
+            <view  class='c' >单号：  </view>
+            <text class='c1'>{{item.postnum}} </text>
+            </view>
+
+          <view style='display: flex; flex-direction: row;'> 
+            <view class='c'>取件时间： </view>
+            <text class='c1'>{{item.date}} {{item.time}}</text>
+             </view>
+          <!--快递柜号-->
+           <view style='display: flex; flex-direction: row;'> 
+            <view class='c'> 电话： </view>
+            <text class='c1'>{{item.phonenum}}</text>
+          </view>
+          <view style='display: flex; flex-direction: row;'> 
+            <view class='c'> 姓名：  </view>
+            <text class='c1'>{{item.name}}</text>
+          </view>
+          <view style='display: flex; flex-direction: row;'> 
+            <view class='c'> 地址：  </view>
+            <text class='c1'> {{item.address}}</text>
+            </view>
+      </view>
     </view>
 
- <!--时间-->
- <view class="form_group">
-        <text class="ar_cont_h1">取件时间:{{item.date}} {{item.time}}</text>
-       
-  </view>
+   
+  </block>
 
-
-
-
-
-
-  <view class="form_group">
-        <text class="ar_cont_h3">电话:{{item.phonenum}}</text>
-      
-    </view>
-
-
-    <view class="form_group">
-        <text class="ar_cont_h4">姓名:{{item.name}}</text>
-        
-    </view>
-
-    <view class="form_group">
-         <text class="ar_cont_h5">地址:{{item.address}}</text>
-        
-    </view>
 </view>
-
-

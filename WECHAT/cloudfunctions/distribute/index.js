@@ -19,7 +19,7 @@ exports.main = async (event, context) => {
           isUse: true,
           now: carInfo.data[i].now + 1,
           postnum: db.command.push(event.postnum),
-          openid: db.command.push(openid),
+          openId: db.command.push(openid),
           adress: event.adress
         }
       })

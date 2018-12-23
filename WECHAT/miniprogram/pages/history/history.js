@@ -4,9 +4,7 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  
 
   /**
    * 生命周期函数--监听页面加载
@@ -71,7 +69,8 @@ Page({
     focus: false,
     inputValue: '',
     queryResult: '',
-    count: 0
+    count: 0,
+    id:''
   },
 
   onAdd: function (e) {
@@ -160,9 +159,10 @@ Page({
     })
     console.log('form发生了reset事件')
   },
-  detail: function () {
+  detail: function (e) {
+    let id = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '../detail/detail',
+      url: '../detail/detail?id='+id,
     })
   }
 })

@@ -5,7 +5,8 @@
     "pages/recievingloc/recievingloc",
     "pages/userinfo/userinfo",
     "pages/history/history",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/gg/gg"
 
   ],
   "window": { 

@@ -12,6 +12,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
+  this.data.id=options.id;
+
     this.onQuery()
   },
 
@@ -71,7 +74,8 @@ Page({
     focus: false,
     inputValue: '',
     queryResult: '',
-    count: 0
+    count: 0,
+    id:''
   },
 
   onAdd: function (e) {
@@ -101,10 +105,10 @@ Page({
   },
 
   onQuery: function () {
-    const db = wx.cloud.database()
+    const db = wx.cloud.database();
     // 查询当前用户所有的 counters
     db.collection('orders').where({
-      postnum: this.data.postnum
+      _id: this.data.id
     }).get({
       success: res => {
         this.setData({
