@@ -3,7 +3,6 @@ Page({
   onLoad: function (options) {
     // 获取初始订单信息
     this.refreshData()
-    
   },
 
   onReady: function () {
@@ -76,7 +75,6 @@ Page({
         this.data.rightbutton = 0
       }
     }
-    
     //跳转至我的快件
     this.setData({
       step:1
@@ -122,10 +120,16 @@ Page({
       url: '../recievingloc/recievingloc'
     })
   },
-  //点“常用收件地点”跳转至history页面
+  //点“常用收件地点”跳转至recievingloc页面
   changeTohistory: function () {
     wx.navigateTo({
       url: '../history/history'
+    })
+  }, onUpdate: function (e) {
+    let id = e.currentTarget.dataset.id
+    const db = wx.cloud.database()
+    wx.navigateTo({
+      url: '../gg/gg?id=' + id,
     })
   }
 })
