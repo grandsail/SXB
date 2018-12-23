@@ -10,5 +10,3 @@
 <block wx:for="{{queryResult}}">
   <view class='locItem' bindtap='SelectItem' data-id='{{item._id}}'>{{item.RecievingLoc}}</view>
 </block>
-
-
