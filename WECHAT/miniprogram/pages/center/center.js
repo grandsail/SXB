@@ -1,9 +1,5 @@
 Page({
-  onLoad: function (options) {
-    // 获取初始订单信息
-    this.refreshData()
-
-  },
+  
 
   onReady: function () {
 
@@ -34,12 +30,7 @@ Page({
  
  
 
-//按加号跳转至book页面
-changeToIndex: function() {
-  wx.redirectTo({
-    url: '../book/book'
-  })
-},
+
 
 //按头像跳转至userinfo页面
 changeToUserinfo: function () {

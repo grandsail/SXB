@@ -60,45 +60,14 @@ Page({
     })
   },
 
-//按下左按钮会发生跳转和变色
-  LEFT: function() {
-    if(this.data.leftbutton == 0)
-    {
-      this.setData({
-        status_left: 'background-color:#e7b75d'
-      })
-      this.data.leftbutton = 1
-      if(this.data.rightbutton == 1)
-      {
-        this.setData({
-          status_right: 'background-color: #F6F6F6'
-        })
-        this.data.rightbutton = 0
-      }
-    }
-    
-    //跳转至我的快件
-    this.setData({
-      step:1
+
+  //按加号跳转至book页面
+  changeToIndex: function () {
+    wx.navigateTo({
+      url: '../book/book'
     })
-  },
-//按下右按钮会发生跳转和变色
-  RIGHT: function () {
-    if (this.data.rightbutton == 0) {
-      this.setData({
-        status_right: 'background-color:#e7b75d'
-      })
-      this.data.rightbutton = 1
-      if (this.data.leftbutton == 1) {
-        this.setData({
-          status_left: 'background-color:#F6F6F6'
-        })
-        this.data.leftbutton = 0
-      }
-    }
-    //跳转至个人中心
-    changeToCenter()
-  },
+  }, 
+    
   
   changeToCenter: function () {
     wx.navigateTo({
