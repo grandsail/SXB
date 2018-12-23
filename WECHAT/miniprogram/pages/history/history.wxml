@@ -2,11 +2,10 @@
 <view class="bjc">
 
   <!--加个详细信息的按钮-->
-  <view class='into' bindtap='detail'>查看详细信息>>>></view>
 
-  <block wx:for="{{queryResult}}">
-    <view style='height:24%; padding:2% 2% 1% 2%;' >
-      <view class='tygs'>
+  <block wx:for="{{queryResult}}" >
+    <view style='height:24%; padding:2% 2% 1% 2%;'>
+      <view class='tygs' data-id='{{item._id}}' bindtap='detail' >
           <view style='display: flex; flex-direction: row;'> 
             <view  class='c' >快递号为：  </view>
             <text class='c1'>{{item.postnum}} </text>
