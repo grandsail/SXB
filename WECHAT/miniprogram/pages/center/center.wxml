@@ -1,0 +1,41 @@
+<!-- 个人中心页面 王静缘需修改-->
+ 
+  
+<block wx:if="{{step==2}}">
+
+
+</block>
+
+
+<view style=' background-color:  white;height: 90%;'>
+   <view class='userinfo'>
+    <!-- 头像-->
+     <view style='width: 30%;height: 30%;border-radius: 50%;margin:3%;overflow:hidden;' bindtap='changeToUserinfo'>
+      <open-data type="userAvatarUrl" ></open-data>
+    </view>
+    <!-- 昵称--> 
+     <view style='width: 75%;height: 25%;margin:10%;'>
+      <open-data type="userNickName" ></open-data>
+    </view>
+    </view>  
+
+  <!--功能键-->
+<view class='function'>
+ <view>
+   <button style='height:20%;margin:5%;' bindtap='changeToRecievingloc'>常用收件地点 </button>
+ </view>
+ <view class='record'>
+   <button style='height:20%;margin:5%;' bindtap='changeTohistory'>预约记录</button>
+ </view>
+</view>
+</view>
+
+<!-- 两个按钮 卢轶轩已完成-->
+<view class = "bottomLine">
+  <view class='choiceL'>
+    <button class='bottomBottonL' style='{{status_left}}' bindtap='LEFT'>我的快件</button>
+  </view>
+  <view class='choiceR'>
+    <button class='bottomBottonR' style='{{status_right}}' bindtap='changeToCenter'>个人中心</button>    
+  </view>
+</view>

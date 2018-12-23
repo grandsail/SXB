@@ -6,8 +6,8 @@
     "pages/userinfo/userinfo",
     "pages/updateuserinfo/updateuserinfo",
     "pages/history/history",
-    "pages/detail/detail"
-
+    "pages/detail/detail",
+    "pages/center/center"
   ],
   "window": { 
     "backgroundColor": "#F6F6F6",
