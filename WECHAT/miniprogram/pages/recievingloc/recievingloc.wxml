@@ -1,6 +1,4 @@
-<block wx:if="{{IsEdit==1}}">
-  <view>添加新的收件地点：</view>
-
+<block wx:if="{{IsEdit==1||IsAdd==1}}">
   <view class="form_group">
   <view class="form_group">
   <text class="ar_cont_h4">姓名:</text>
@@ -14,11 +12,12 @@
   <input type="text" placeholder="{{reg_address}}" placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
   </view>
 
-  <view class='button' bindtap="saveadd" >保存</view>
-  <view class='button' bindtap="canceladd" >返回</view>
+  <view class='button' bindtap="saveadd" >确定</view>
+  <view wx:if="{{IsAdd==1}}" class='button' bindtap="canceladd" >返回</view>
+  <view wx:if="{{IsEdit==1}}" class='button' bindtap="saveadd" >返回</view>
 </block>
 
-<block wx:if="{{IsEdit==0}}">
+<block wx:if="{{IsEdit==0&&IsAdd==0}}">
   <block wx:for="{{queryResult}}">
     <view class='locItem' bindtap='edit' data-id='{{item._id}}' data-name='{{item.userName}}' data-phonenum='{{item.userPhoneNum}}' data-address='{{item.userAddress}}'>
         <view class='name'>{{item.userName}}</view>
@@ -28,6 +27,6 @@
     </view>
   </block>
 </block>
-<view wx:if="{{IsEdit==0}}" bindtap='AddRecievingLoc' class='add' >
+<view wx:if="{{IsEdit==0&&IsAdd==0}}" bindtap='AddRecievingLoc' class='add' >
     <image class='add_image' src='../source/plus_receivingloc.png'></image>
 </view>

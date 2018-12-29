@@ -1,6 +1,7 @@
 // miniprogram/pages/recievingloc/recievingloc.js
 Page({
   data:{
+    IsAdd:0,
     IsEdit:0,
     reg_name:'',
     reg_phonenum:'',
@@ -56,10 +57,10 @@ Page({
   },
 
   AddRecievingLoc(e){
-    var a = this.data.IsEdit;
+    var a = this.data.IsAdd;
     a = (a + 1) %2;
     this.setData({
-      IsEdit:a
+      IsAdd:a
     })
   },
 
@@ -83,7 +84,7 @@ Page({
   
   canceladd() {
     this.setData({
-      IsEdit: 0
+      IsAdd: 0
     })
   },
 
@@ -96,10 +97,6 @@ Page({
         userAddress: this.data.reg_address
       },
       success: res => {
-        // 在返回结果中会包含新创建的记录的 _id
-        wx.showToast({
-          title: '保存成功',
-        })
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
         this.setData({
           reg_name: '',
@@ -108,15 +105,12 @@ Page({
         })
       },
       fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '上传失败'
-        })
         console.error('[数据库] [新增记录] 失败：', err)
       }
     })
     this.setData({
-      IsEdit:0
+      IsEdit:0,
+      IsAdd:0
     })
   },
 })
