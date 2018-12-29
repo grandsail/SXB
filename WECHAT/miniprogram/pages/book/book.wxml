@@ -36,16 +36,34 @@
         </view>
 </view>
 
+<!--收件地址-->
 
-<view class="ar_picker">
-        <view class="ar_picker_wrap">
-        <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
-            <view>
-                <text>{{addrArray[addrIndex]}}</text>
-            </view>
-        </picker>
-        </view>
-    </view>
+
+<view  class='mainPage'>
+    <block wx:for="{{queryResult}}">
+      <view style='height:22%; padding:2% 2% 1% 2%;'>
+        <view class='order' data-id='{{item._id}}' bindtap='onUpdate'>
+          <view style='height:74%;width:100%;display:flex;flex-direction: row;border-radius: 5%;'>
+            <view class='halfwidthbox'>
+              <view class='halfheightbox.text'>姓名:
+              <text style=' color:  #c0871c;margin-left:3%;'> {{item.postnum}}</text>
+              </view>
+
+              <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>联系方式：
+               <text style=' color:  #c0871c;margin-left:3%;'>{{item.box}}号柜{{item.car}}号车</text>  
+              </view>
+
+                <view wx:if="{{item.state != 3}}" style='height:26%;width:100%'>收件地址:
+           <text style=' color:  #c0871c;margin-left:3%;'>  {{item.date}} 时间:{{item.time}} </text>  
+          </view>
+
+
+
+
+
+
+</view>
+</view>
 
 
 

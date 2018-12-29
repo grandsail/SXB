@@ -30,13 +30,38 @@ bindTimeChange: function (e) {
   }
 ,
 
-
-  bindAddrPickerChange: function (e) {
-    console.log('Addrpicker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      addrIndex: e.detail.value
+  refreshData: function () {
+    const db = wx.cloud.database()
+    db.collection('recievingloc').where({
+      _openid: this.data.openid
+    }).get({
+      success: res => {
+        this.setData({
+          queryResult: res.data
+        })
+        console.log('[数据库] [查询记录] 成功: ', res)
+      },
+      fail: err => {
+        console.error('[数据库] [查询记录] 失败：', err)
+      }
     })
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
   
 
 //获取输入的数据
