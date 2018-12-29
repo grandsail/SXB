@@ -116,3 +116,80 @@
     border-radius:8rpx;
     padding:0rpx 10rpx;
 }
+page {
+  background-color:  white;
+  justify-content: flex-start;
+  height: 100%
+}
+
+.button{
+  width: 60%;
+  height: 5%;
+  background-color:beige;
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-left: 20%;
+}
+
+.name{
+  width: 30%;
+  height: 10%;
+  padding-top: 2%;
+  padding-left: 3%; 
+}
+
+.phonenum{
+  width: 50%;
+  height: 10%;
+  padding-top: 5%;
+  padding-left: 3%; 
+}
+
+.address{
+  height: 10%;
+  padding-top: 5%;
+  padding-left: 3%; 
+}
+
+.add{
+    width: 25%;
+    height: 15%;
+}
+
+.edit_image{
+  padding-right: 3%;
+  width: 7%;
+  height: 21%;
+  float: right;
+  bottom: 2%;
+  right: 3%;
+}
+
+.locItem{
+  width: 80%;
+  height: 16%;
+  background-color:#fff2cc;
+  border-radius: 5%;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.add{
+  width: 80%;
+  height: 16%;
+  background-color:#e7e6e6;
+  border-radius: 5%;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.add_image{
+  padding-right: 3%;
+  margin-left: 25%;
+  padding-top: 3%;
+  padding-left: 12%; 
+  width: 27%;
+  height: 80%;
+}

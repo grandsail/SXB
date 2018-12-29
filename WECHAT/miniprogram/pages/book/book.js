@@ -1,5 +1,5 @@
 var app = getApp()
-var myData = require('../../utils/data')
+
 
 Page({
 
@@ -15,6 +15,17 @@ data: {
   box: '',
   back: ''
   },
+
+  onLoad: function (options) {
+    // 获取初始订单信息
+    this.refreshData()
+  },
+  onPullDownRefresh: function () {
+    //下拉刷新常用收件地点
+    this.refreshData()
+    wx.stopPullDownRefresh()
+  },
+
 //picker选择时间日期
 bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -30,10 +41,12 @@ bindTimeChange: function (e) {
   }
 ,
 
+  
+  //刷新数据，访问数据库，寻找与本机_openid相同的收件地点记录，存储在queryResult数组内
   refreshData: function () {
     const db = wx.cloud.database()
     db.collection('recievingloc').where({
-      _openid: this.data.openid
+      _id: XCd1qFsqTi00tlBl
     }).get({
       success: res => {
         this.setData({
@@ -47,23 +60,8 @@ bindTimeChange: function (e) {
     })
   },
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
   
-
+  
 //获取输入的数据
 userNumInput: function (e) {
     // console.log(e.detail.value)设置用户名

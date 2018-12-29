@@ -1,12 +1,8 @@
-
-<view class="container">
-
-
 <view class="form_blank">
 
 </view>
 
-
+<!--输入单号-->
 <view class="form_group">
         <text >单号:</text>
         <input type="number" placeholder="请输入快递单号 " placeholder-class="placeholder_style" name="data_num" value="{{data_num}}" focus="{{focus}}" bindinput='confirm' bindblur='userNumInput'/>
@@ -16,18 +12,16 @@
  <view class="ar_cont">
         <text class="ar_cont_h1">取件时间:</text>
         <view class="ar_date_time">
-            <view class="ar_date">
-                
-                <picker mode="date" placeholder="选择日期" value="{{date}}" start="2018-11-14" end="2019-11-14" bindchange="bindDateChange" >
+        <view class="ar_date">
+        <picker mode="date" placeholder="选择日期" value="{{date}}" start="2018-11-14" end="2019-11-14" bindchange="bindDateChange" >
                     <view>
                         {{date}}
                     </view>
                 </picker>
             </view>
 
-            <view class="ar_time">
-                
-                <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+      <view class="ar_time">
+      <picker mode="time" placeholder="选择时间" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
                     <view>
                         {{time}}
                     </view>
@@ -36,60 +30,24 @@
         </view>
 </view>
 
+
+
 <!--收件地址-->
 
-
-<view  class='mainPage'>
-    <block wx:for="{{queryResult}}">
-      <view style='height:22%; padding:2% 2% 1% 2%;'>
-        <view class='order' data-id='{{item._id}}' bindtap='onUpdate'>
-          <view style='height:74%;width:100%;display:flex;flex-direction: row;border-radius: 5%;'>
-            <view class='halfwidthbox'>
-              <view class='halfheightbox.text'>姓名:
-              <text style=' color:  #c0871c;margin-left:3%;'> {{item.postnum}}</text>
-              </view>
-
-              <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>联系方式：
-               <text style=' color:  #c0871c;margin-left:3%;'>{{item.box}}号柜{{item.car}}号车</text>  
-              </view>
-
-                <view wx:if="{{item.state != 3}}" style='height:26%;width:100%'>收件地址:
-           <text style=' color:  #c0871c;margin-left:3%;'>  {{item.date}} 时间:{{item.time}} </text>  
-          </view>
-
-
-
-
-
-
-</view>
-</view>
-
-
-
-
-
-<view class="form_group">
-        <text>电话:</text>
-        <input type="number" placeholder="请输入取件人电话 " placeholder-class="placeholder_style" name="data_phone" value="{{}}"    maxlength='11' bindinput='confirm' bindblur='userPhoneNumInput'/>
+    <view class='locItem' bindtap='SelectItem' data-id='{{item._id}}'>
+        <view class='name'>姓名：{{item.name}}</view>
+        <view class='phonenum'>联系方式：{{item.phonenum}}</view>
+        <view class='address'>收件地址：{{item.address}}</view>
+        <image class='edit_image' src='../source/edit_receivingloc.png'></image>
     </view>
+  
 
 
-    <view class="form_group">
-        <text>姓名:</text>
-        <input type="text" placeholder="请输入收件人姓名" placeholder-class="placeholder_style" name="data_name" value="{{data_name}}" focus="{{focus}}" bindinput='confirm' bindblur='userNameInput' />
-    </view>
 
-    <view class="form_group">
-         <text>地址:</text>
-        <input type="text" placeholder="请输入预约取件地点 " placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
-    </view>
+
 <view  class='tapLogin' bindtap='toFrontpage' >
 <button bindtap="clickMe" >提交</button>
  
 </view>
 
 
-
-
-</view>
