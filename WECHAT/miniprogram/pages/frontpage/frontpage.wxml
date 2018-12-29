@@ -11,7 +11,7 @@
               </view>
 
               <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>货箱：
-               <text style=' color:  #c0871c;margin-left:3%;'>{{item.box}}号柜{{item.car}}号车</text>  
+               <text style=' color:  #c0871c;margin-left:3%;'>{{item.car}}号车{{item.box}}号柜</text>  
               </view>
 
               <view wx:else class='halfheightbox.text'>请预约收件时间地点</view>
