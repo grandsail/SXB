@@ -2,7 +2,6 @@
 Page({
   data:{
     IsAdd:0,
-    address: '',
   },
 
   onLoad: function (options) {
@@ -49,6 +48,20 @@ Page({
     })
   },
 
+  userPhoneNumInput: function (e) {
+
+    this.setData({
+      userPhoneNum: e.detail.value
+    })
+  },
+
+  userNameInput: function (e) {
+
+    this.setData({
+      userName: e.detail.value
+    })
+  },
+
   userAddressInput: function (e) {
 
     this.setData({
@@ -56,18 +69,24 @@ Page({
     })
   },
   
-  clickMe: function (e) {
-    const db = wx.cloud.database()
+  canceladd() {
+    this.setData({
+      IsAdd: 0
+    })
+  },
 
+  saveadd: function (e) {
+    const db = wx.cloud.database()
     db.collection('recievingloc').add({
       data: {
-        RecievingLoc: this.data.userAddress
+        userName: this.data.userName,
+        userPhoneNum: this.data.userPhoneNum,
+        userAddress: this.data.userAddress
       },
-
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
         wx.showToast({
-          title: '上传成功',
+          title: '保存成功',
         })
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
       },
@@ -78,9 +97,7 @@ Page({
         })
         console.error('[数据库] [新增记录] 失败：', err)
       }
-
     })
-
     this.setData({
       IsAdd:0
     })

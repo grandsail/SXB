@@ -3,8 +3,6 @@
     "pages/frontpage/frontpage",
     "pages/book/book",
     "pages/recievingloc/recievingloc",
-    "pages/userinfo/userinfo",
-    "pages/updateuserinfo/updateuserinfo",
     "pages/history/history",
     "pages/detail/detail",
     "pages/gg/gg"
