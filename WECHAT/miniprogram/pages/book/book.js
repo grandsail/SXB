@@ -56,7 +56,7 @@ userAddressInput: function (e) {
 clickMe: function (e) {
   const db = wx.cloud.database()
   wx.cloud.callFunction({
-    name:"distribute",
+    name:"distributeCar",
     data:{
       time: this.data.time,
       postnum: this.data.userNum,
@@ -104,7 +104,7 @@ clickMe: function (e) {
   })
 },
   toFrontpage:function(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../frontpage/frontpage',
     })
   }
