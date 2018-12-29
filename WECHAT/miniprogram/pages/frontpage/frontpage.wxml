@@ -59,7 +59,7 @@
   <!--功能键-->
 <view class='function'>
  <view>
-   <button style='height:20%;margin:5%;' bindtap='changeToRecievingloc'>常用收件地点 </button>
+   <button style='height:20%;margin:5%;' bindtap='changeToRecievingloc'>收件地点 </button>
  </view>
  <view class='record'>
    <button style='height:20%;margin:5%;' bindtap='changeTohistory'>预约记录</button>
