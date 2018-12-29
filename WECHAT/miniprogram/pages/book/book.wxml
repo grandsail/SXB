@@ -56,16 +56,6 @@
          <text class="ar_cont_h5">地址:</text>
         <input type="text" placeholder="请输入预约取件地点 " placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
     </view>
-
-
-
-
-
-
-
-
-
-
 <view  class='tapLogin' bindtap='toFrontpage' >
 <button bindtap="clickMe" >提交</button>
  
