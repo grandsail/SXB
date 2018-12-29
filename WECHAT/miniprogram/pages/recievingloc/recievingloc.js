@@ -2,6 +2,10 @@
 Page({
   data:{
     IsAdd:0,
+    IsEdit:0,
+    reg_name:'',
+    reg_phonenum:'',
+    reg_address:''
   },
 
   onLoad: function (options) {
@@ -33,10 +37,22 @@ Page({
     })
   },
 
-  //选中点击的收件地点记录
-  SelectItem(e){
-    this.setData({
-      //print: e.currentTarget.dataset.id
+  //编辑点击的收件地点记录
+  edit(e){
+    var id = e.currentTarget.dataset.id;
+    var name = e.currentTarget.dataset.name;
+    var phonenum = e.currentTarget.dataset.phonenum;
+    var address = e.currentTarget.dataset.address;
+    const db = wx.cloud.database()
+    db.collection('recievingloc').doc(id).remove({
+      success: res => {
+        this.setData({
+          IsEdit:1,
+          reg_name:name,
+          reg_phonenum:phonenum,
+          reg_address:address,
+        })
+      },
     })
   },
 
@@ -49,23 +65,20 @@ Page({
   },
 
   userPhoneNumInput: function (e) {
-
     this.setData({
-      userPhoneNum: e.detail.value
+      reg_phonenum: e.detail.value
     })
   },
 
   userNameInput: function (e) {
-
     this.setData({
-      userName: e.detail.value
+      reg_name: e.detail.value
     })
   },
 
   userAddressInput: function (e) {
-
     this.setData({
-      userAddress: e.detail.value
+      reg_address: e.detail.value
     })
   },
   
@@ -79,26 +92,24 @@ Page({
     const db = wx.cloud.database()
     db.collection('recievingloc').add({
       data: {
-        userName: this.data.userName,
-        userPhoneNum: this.data.userPhoneNum,
-        userAddress: this.data.userAddress
+        userName: this.data.reg_name,
+        userPhoneNum: this.data.reg_phonenum,
+        userAddress: this.data.reg_address
       },
       success: res => {
-        // 在返回结果中会包含新创建的记录的 _id
-        wx.showToast({
-          title: '保存成功',
-        })
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        this.setData({
+          reg_name: '',
+          reg_phonenum: '',
+          reg_address: '',
+        })
       },
       fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '上传失败'
-        })
         console.error('[数据库] [新增记录] 失败：', err)
       }
     })
     this.setData({
+      IsEdit:0,
       IsAdd:0
     })
   },

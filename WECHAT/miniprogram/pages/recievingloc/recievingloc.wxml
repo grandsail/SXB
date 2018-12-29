@@ -1,26 +1,25 @@
-<block wx:if="{{IsAdd==1}}">
-  <view>添加新的收件地点：</view>
-
+<block wx:if="{{IsEdit==1||IsAdd==1}}">
   <view class="form_group">
   <view class="form_group">
   <text class="ar_cont_h4">姓名:</text>
-  <input type="text" placeholder="请输入收件人姓名" placeholder-class="placeholder_style" name="data_name" value="{{data_name}}" focus="{{focus}}" bindinput='confirm' bindblur='userNameInput' />
+  <input type="text" placeholder="{{reg_name}}" placeholder-class="placeholder_style" name="data_name" value="{{data_name}}" focus="{{focus}}" bindinput='confirm' bindblur='userNameInput' />
   </view>
   <text class="ar_cont_h3">电话:</text>
-  <input type="number" placeholder="请输入取件人电话 " placeholder-class="placeholder_style" name="data_phone" value="{{}}"    maxlength='11' bindinput='confirm' bindblur='userPhoneNumInput'/>
+  <input type="number" placeholder="{{reg_phonenum}}" placeholder-class="placeholder_style" name="data_phone" value="{{}}"    maxlength='11' bindinput='confirm' bindblur='userPhoneNumInput'/>
   </view>
   <view class="form_group">
   <text class="ar_cont_h5">地址:</text>
-  <input type="text" placeholder="请输入预约取件地点 " placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
+  <input type="text" placeholder="{{reg_address}}" placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
   </view>
 
-  <view class='button' bindtap="saveadd" >保存</view>
-  <view class='button' bindtap="canceladd" >返回</view>
+  <view class='button' bindtap="saveadd" >确定</view>
+  <view wx:if="{{IsAdd==1}}" class='button' bindtap="canceladd" >返回</view>
+  <view wx:if="{{IsEdit==1}}" class='button' bindtap="saveadd" >返回</view>
 </block>
 
-<block wx:if="{{IsAdd==0}}">
+<block wx:if="{{IsEdit==0&&IsAdd==0}}">
   <block wx:for="{{queryResult}}">
-    <view class='locItem' bindtap='SelectItem' data-id='{{item._id}}'>
+    <view class='locItem' bindtap='edit' data-id='{{item._id}}' data-name='{{item.userName}}' data-phonenum='{{item.userPhoneNum}}' data-address='{{item.userAddress}}'>
         <view class='name'>{{item.userName}}</view>
         <view class='phonenum'>{{item.userPhoneNum}}</view>
         <view class='address'>地址：{{item.userAddress}}</view>
@@ -28,6 +27,6 @@
     </view>
   </block>
 </block>
-<view wx:if="{{IsAdd==0}}" bindtap='AddRecievingLoc' class='add' >
+<view wx:if="{{IsEdit==0&&IsAdd==0}}" bindtap='AddRecievingLoc' class='add' >
     <image class='add_image' src='../source/plus_receivingloc.png'></image>
 </view>
