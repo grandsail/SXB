@@ -1,17 +1,16 @@
 <block wx:if="{{IsEdit==1||IsAdd==1}}">
-  <view class="form_group">
-  <view class="form_group">
-  <text class="ar_cont_h4">姓名:</text>
-  <input type="text" placeholder="{{reg_name}}" placeholder-class="placeholder_style" name="data_name" value="{{data_name}}" focus="{{focus}}" bindinput='confirm' bindblur='userNameInput' />
+  <view class="form_item">
+    <text class='form_text'>姓名</text>
+    <input class="form_input" type="text" placeholder="{{reg_name}}" bindblur='userNameInput' />
   </view>
-  <text class="ar_cont_h3">电话:</text>
-  <input type="number" placeholder="{{reg_phonenum}}" placeholder-class="placeholder_style" name="data_phone" value="{{}}"    maxlength='11' bindinput='confirm' bindblur='userPhoneNumInput'/>
+  <view class="form_item">
+   <text class='form_text'>电话</text>
+   <input class="form_input" type="number" placeholder="{{reg_phonenum}}" bindblur='userPhoneNumInput'/>
   </view>
-  <view class="form_group">
-  <text class="ar_cont_h5">地址:</text>
-  <input type="text" placeholder="{{reg_address}}" placeholder-class="placeholder_style" name="data_address" value="{{data_address}}" focus="{{focus}}" bindinput='confirm' bindblur='userAddressInput'/>
+  <view class="form_item">
+   <text class='form_text'>地址</text>
+   <input class="form_input" type="text" placeholder="{{reg_address}}" bindblur='userAddressInput'/>
   </view>
-
   <view class='button' bindtap="saveadd" >确定</view>
   <view wx:if="{{IsAdd==1}}" class='button' bindtap="canceladd" >返回</view>
   <view wx:if="{{IsEdit==1}}" class='button' bindtap="saveadd" >返回</view>
