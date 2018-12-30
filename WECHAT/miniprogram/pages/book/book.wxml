@@ -33,15 +33,17 @@
 
 
 <!--收件地址-->
-
-    <view class='locItem' bindtap='SelectItem' data-id='{{item._id}}'>
+<view class="text" bindtap='toChange'><text>收件地址</text></view>
+<view>
+ <block wx:for="{{queryResult}}">
+    <view class='locItem' bindtap='toChange' data-id='{{item._id}}'>
         <view class='name'>姓名：{{item.name}}</view>
         <view class='phonenum'>联系方式：{{item.phonenum}}</view>
         <view class='address'>收件地址：{{item.address}}</view>
         <image class='edit_image' src='../source/edit_receivingloc.png'></image>
     </view>
-  
-
+  </block>
+</view>
 
 
 

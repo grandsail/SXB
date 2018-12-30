@@ -46,11 +46,12 @@ bindTimeChange: function (e) {
   refreshData: function () {
     const db = wx.cloud.database()
     db.collection('recievingloc').where({
-      _id: XCd1qFsqTi00tlBl
+      _openid: this.data.openid
     }).get({
       success: res => {
         this.setData({
-          queryResult: res.data
+          queryResult: res.data,
+          name:this.data.name
         })
         console.log('[数据库] [查询记录] 成功: ', res)
       },
@@ -59,7 +60,6 @@ bindTimeChange: function (e) {
       }
     })
   },
-
   
   
 //获取输入的数据
@@ -69,25 +69,7 @@ userNumInput: function (e) {
       userNum: e.detail.value
     })
   },
-userPhoneNumInput: function (e) {
-   
-    this.setData({
-     userPhoneNum: e.detail.value
-    })
-  },
-  
-userNameInput: function (e) {
 
-    this.setData({
-      userName: e.detail.value
-    })
-  },
-userAddressInput: function (e) {
-
-    this.setData({
-      userAddress: e.detail.value
-    })
-  },
 //提交订单并跳转到首页
 clickMe: function (e) {
   const db = wx.cloud.database()
@@ -108,9 +90,9 @@ clickMe: function (e) {
           date: this.data.date,
           time: this.data.time,
           postnum: this.data.userNum,
-          phonenum: this.data.userPhoneNum,
-          name: this.data.userName,
-          address: this.data.userAddress,
+          phonenum: queryResult[0].phonenum,
+          name: queryResult[0].name,
+          address: queryResult[0].address,
           car: this.data.back.carNum,
           box: this.data.back.carBox,
           state: 1
@@ -143,6 +125,13 @@ clickMe: function (e) {
     wx.navigateTo({
       url: '../frontpage/frontpage',
     })
+  },
+
+  toChange:function(){
+wx.navigateTo({
+  url:'../recievingloc/recievingloc',
+})
+
   }
 
   })

@@ -20,9 +20,9 @@
 <block wx:if="{{IsEdit==0&&IsAdd==0}}">
   <block wx:for="{{queryResult}}">
     <view class='locItem' bindtap='edit' data-id='{{item._id}}' data-name='{{item.userName}}' data-phonenum='{{item.userPhoneNum}}' data-address='{{item.userAddress}}'>
-        <view class='name'>{{item.userName}}</view>
-        <view class='phonenum'>{{item.userPhoneNum}}</view>
-        <view class='address'>地址：{{item.userAddress}}</view>
+        <view class='name'>{{item.name}}</view>
+        <view class='phonenum'>{{item.phonenum}}</view>
+        <view class='address'>地址：{{item.address}}</view>
         <image class='edit_image' src='../source/edit_receivingloc.png'></image>
     </view>
   </block>
