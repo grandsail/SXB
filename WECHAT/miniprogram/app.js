@@ -1,5 +1,9 @@
 //app.js
 App({
+  globalData:{
+   counterId:''
+  },
+
   onLaunch: function () {
     
     if (!wx.cloud) {
