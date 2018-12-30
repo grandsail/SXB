@@ -1,4 +1,3 @@
-/* miniprogram/pages/frontpage/frontpage.wxss */
 page {
   background-color: #F6F6F6;
   display: flex;
@@ -11,7 +10,7 @@ page {
   height: 100%;
 }
 .bottomLine{
-  float:right;
+  float: right;
   position: fixed;
   flex-direction: row;
   height:10%;
@@ -30,11 +29,11 @@ page {
 }
 .bottomBottonL{
   height: 100%;
-  background-color: #e7b75d;
+  background-color: white;
 }
 .bottomBottonR{
   height: 100%;
-  background-color: white;
+  background-color: #e7b75d;
 }
 .order{
   height: 100%;
