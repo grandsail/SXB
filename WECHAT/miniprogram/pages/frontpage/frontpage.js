@@ -1,4 +1,5 @@
 // miniprogram/pages/frontpage/frontpage.js
+var app = getApp();
 Page({
   onLoad: function (options) {
     // 获取初始订单信息
@@ -39,7 +40,11 @@ Page({
   data: {
     leftbutton: 1 , //左按钮指示 1：当前位于左按钮页面 0：不位于此页面
     rightbutton: 0, //右按钮指示 1：当前位于右按钮页面 0：不位于此页面
-    step:1 //换页面指示 1：我的快件 2：个人中心
+    step:1 ,//换页面指示 1：我的快件 2：个人中心
+    counterId:'' ,
+    openid: '',
+    count: null,
+    queryResult: '',
   },
 
   //刷新数据，访问数据库，寻找与本机_openid相同的订单，存储在queryResult数组内
@@ -47,10 +52,13 @@ Page({
     const db = wx.cloud.database()
     db.collection('orders').where({
       _openid: this.data.openid
-    }).get({
+
+    })
+    .get({
       success: res => {
         this.setData({
-          queryResult: res.data
+          queryResult: res.data,
+         
         })
         console.log('[数据库] [查询记录] 成功: ', res)
       },
@@ -69,9 +77,52 @@ Page({
   }, 
     
   
+  
   changeToCenter: function () {
     wx.navigateTo({
       url: '../center/center'
     })
   },
+
+  
+  deleteclass: function (e) {
+    var id=e.currentTarget.dataset.id
+   
+    
+    wx.showModal({
+      title: '提示',
+      content: '确定要删除此图片吗？',
+      success: function (res) {
+        if (res.confirm) {
+          
+            const db = wx.cloud.database()
+            db.collection('orders').doc(id).remove({
+              success: res => {
+                wx.showToast({
+                  title: '删除成功',
+                })
+                this.setData({
+                  counterId: '',
+                  count: null,
+                })
+              },
+              fail: err => {
+                wx.showToast({
+                  icon: 'none',
+                  title: '删除失败',
+                })
+                console.error('[数据库] [删除记录] 失败：', err)
+              }
+            })
+         
+        
+
+        } else if (res.cancel) {
+          console.log('点击取消了');
+          return false;
+        }
+        
+      }
+    })
+  }
 })
