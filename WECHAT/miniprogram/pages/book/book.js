@@ -112,7 +112,7 @@ clickMe: function (e) {
   })
 },
   toFrontpage:function(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../frontpage/frontpage',
     })
   }
