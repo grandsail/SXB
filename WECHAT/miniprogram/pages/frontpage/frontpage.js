@@ -88,7 +88,7 @@ Page({
     
     wx.showModal({
       title: '提示',
-      content: '确定要删除此图片吗？',
+      content: '确定要删除此订单吗？',
       success: function (res) {
         if (res.confirm) {
           

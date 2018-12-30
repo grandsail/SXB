@@ -6,10 +6,7 @@ page {
   justify-content: flex-start;
   height: 100%
 }
-.mainPage{
-  background-color: white;
-  height: 100%;
-}
+
 .bottomLine{
   float:right;
   position: fixed;
@@ -18,29 +15,14 @@ page {
   background-color: white;
   bottom: 0%;
 }
-.choiceL{
-  width: 375rpx;
-  float:left;
-  height: 100%;
-}
-.choiceR{
-  width: 375rpx;
-  float:right;
-  height: 100%;
-}
-.bottomBottonL{
-  height: 100%;
-  background-color: #e7b75d;
-}
-.bottomBottonR{
-  height: 100%;
-  background-color: white;
-}
+
+
 .order{
-  height: 100%;
+  height: 98%;
   background-color: #F6F6F6;
-  width: 100%;
+  width: 98%;
   border-radius: 5%;
+
 }
 .halfheightbox{
   height: 50%;
