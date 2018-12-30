@@ -35,7 +35,7 @@
 <!--收件地址-->
 <view class="text" bindtap='toChange'><text>收件地址</text></view>
 <view>
- <block wx:for="{{queryResult}}">
+ <block wx:for="{{canUesAddr}}">
     <view class='locItem' bindtap='toChange' data-id='{{item._id}}'>
         <view class='name'>姓名：{{item.name}}</view>
         <view class='phonenum'>联系方式：{{item.phonenum}}</view>

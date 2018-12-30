@@ -13,19 +13,15 @@ data: {
   state: 2,
   car: '',
   box: '',
-  back: ''
+  back: '',
+  canUesAddr: ''
   },
 
   onLoad: function (options) {
     // 获取初始订单信息
     this.refreshData()
   },
-  onPullDownRefresh: function () {
-    //下拉刷新常用收件地点
-    this.refreshData()
-    wx.stopPullDownRefresh()
-  },
-
+ 
 //picker选择时间日期
 bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -46,13 +42,15 @@ bindTimeChange: function (e) {
   refreshData: function () {
     const db = wx.cloud.database()
     db.collection('recievingloc').where({
-      _openid: this.data.openid
+      openid: this.data.openid
     }).get({
       success: res => {
         this.setData({
-          queryResult: res.data,
-          name:this.data.name
+          canUesAddr: res.data
         })
+        this.data.name = canUesAddr[0].name
+        this.data.phonenum = canUesAddr[0].phonenum
+        this.data.address = canUesAddr[0].address
         console.log('[数据库] [查询记录] 成功: ', res)
       },
       fail: err => {
@@ -78,7 +76,7 @@ clickMe: function (e) {
     data:{
       time: this.data.time,
       postnum: this.data.userNum,
-      address: this.data.userAddress,
+      address: this.data.address,
     },
     success: res => {
       this.setData({
@@ -90,12 +88,15 @@ clickMe: function (e) {
           date: this.data.date,
           time: this.data.time,
           postnum: this.data.userNum,
-          phonenum: queryResult[0].phonenum,
-          name: queryResult[0].name,
-          address: queryResult[0].address,
           car: this.data.back.carNum,
           box: this.data.back.carBox,
-          state: 1
+          state: 1,
+          name:this.data.name,
+          address:this.data.address,
+          phonenum:this.data.phonenum
+
+
+        
         },
 
         success: res => {
