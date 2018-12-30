@@ -1,9 +1,9 @@
 <!-- 我的快件页面 卢轶轩已完成-->
 <block wx:if="{{step==1}}">
-  <view  class='mainPage'>
-    <block wx:for="{{queryResult}}">
+  <view class='mainPage'>
+    <block wx:for="{{queryResult}}"  >
       <view style='height:22%; padding:2% 2% 1% 2%;'>
-        <view class='order' data-id='{{item._id}}' bindtap='onUpdate'>
+        <view class='order' bindlongpress="deleteclass"  data-id="{{item._id}}" >
           <view style='height:74%;width:100%;display:flex;flex-direction: row;border-radius: 5%;'>
             <view class='halfwidthbox'>
               <view class='halfheightbox.text'>快递号:
@@ -11,7 +11,7 @@
               </view>
 
               <view wx:if="{{item.state != 3}}" class='halfheightbox.text'>货箱：
-               <text style=' color:  #c0871c;margin-left:3%;'>{{item.box}}号柜{{item.car}}号车</text>  
+               <text style=' color:  #c0871c;margin-left:3%;'>{{item.car}}号车{{item.box}}号柜</text>  
               </view>
 
               <view wx:else class='halfheightbox.text'>请预约收件时间地点</view>
@@ -41,39 +41,7 @@
   </view>
 </block>  
 
-<!-- 个人中心页面 王静缘需修改-->
-<block wx:if="{{step==2}}">
-   <view style=' background-color:  white;height: 90%;'>
-   <view class='userinfo'>
-    <!-- 头像-->
-     <view style='width: 30%;height: 30%;border-radius: 50%;margin:3%;overflow:hidden;' bindtap='changeToUserinfo'>
-      <open-data type="userAvatarUrl" ></open-data>
-    </view>
-    <!-- 昵称--> 
-     <view style='width: 75%;height: 25%;margin:10%;'>
-      <open-data type="userNickName" ></open-data>
-    </view>
-    </view>
-  
 
-  <!--功能键-->
-<view class='function'>
- <view>
-   <button style='height:20%;margin:5%;' bindtap='changeToRecievingloc'>收件地点 </button>
- </view>
- <view class='record'>
-   <button style='height:20%;margin:5%;' bindtap='changeTohistory'>预约记录</button>
- </view>
-</view>
-</view>
-</block>
 
-<!-- 两个按钮 卢轶轩已完成-->
-<view class = "bottomLine">
-  <view class='choiceL'>
-    <button class='bottomBottonL' style='{{status_left}}' bindtap='LEFT'>我的快件</button>
-  </view>
-  <view class='choiceR'>
-    <button class='bottomBottonR' style='{{status_right}}' bindtap='RIGHT'>个人中心</button>    
-  </view>
-</view>
+
+

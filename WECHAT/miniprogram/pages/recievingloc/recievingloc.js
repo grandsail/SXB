@@ -5,7 +5,8 @@ Page({
     IsEdit:0,
     reg_name:'',
     reg_phonenum:'',
-    reg_address:''
+    reg_address:'',
+    reg_id:''
   },
 
   onLoad: function (options) {
@@ -44,17 +45,20 @@ Page({
     var phonenum = e.currentTarget.dataset.phonenum;
     var address = e.currentTarget.dataset.address;
     const db = wx.cloud.database()
-    db.collection('recievingloc').doc(id).remove({
-      success: res => {
-        this.setData({
-          IsEdit:1,
-          reg_name:name,
-          reg_phonenum:phonenum,
-          reg_address:address,
-        })
-      },
+    //db.collection('recievingloc').doc(id).remove({
+     // success: res => {
+    this.setData({
+      IsEdit:1,
+      reg_name:name,
+      reg_phonenum:phonenum,
+      reg_address:address,
+      reg_id:id,
     })
+      //},
+    //})
   },
+
+
 
   AddRecievingLoc(e){
     var a = this.data.IsAdd;
@@ -82,9 +86,10 @@ Page({
     })
   },
   
-  canceladd() {
+  cancel() {
     this.setData({
-      IsAdd: 0
+      IsAdd: 0,
+      IsEdit: 0,
     })
   },
 
@@ -111,6 +116,34 @@ Page({
     this.setData({
       IsEdit:0,
       IsAdd:0
+    })
+  },
+
+  save_edit: function (e) {
+    const db = wx.cloud.database()
+    db.collection('recievingloc').doc(this.data.reg_id).remove({})
+    db.collection('recievingloc').add({
+      data: {
+        userName: this.data.reg_name,
+        userPhoneNum: this.data.reg_phonenum,
+        userAddress: this.data.reg_address
+      },
+      success: res => {
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        this.setData({
+          reg_name: '',
+          reg_phonenum: '',
+          reg_address: '',
+          reg_id:'',
+        })
+      },
+      fail: err => {
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+    })
+    this.setData({
+      IsEdit: 0,
+      IsAdd: 0
     })
   },
 })

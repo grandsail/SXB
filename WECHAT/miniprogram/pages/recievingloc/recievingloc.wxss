@@ -5,14 +5,34 @@ page {
   height: 100%
 }
 
+.form_item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  height: 10%;
+  margin-top: 3%;
+}
+
+.form_text{
+  width: 20%;
+}
+
+.form_input{
+  width: 70%;
+  border:1px solid #ddd;
+}
+
 .button{
-  width: 60%;
-  height: 5%;
+  width: 40%;
+  height: 8%;
   background-color:beige;
   display: flex;
-  justify-content: center;
+  justify-content: center; 
+  align-items: center;
   margin-top: 5%;
-  margin-left: 20%;
+  margin-left: 30%;
+  border-radius: 5%;
 }
 
 .name{
@@ -38,15 +58,6 @@ page {
 .add{
     width: 25%;
     height: 15%;
-}
-
-.edit_image{
-  padding-right: 3%;
-  width: 7%;
-  height: 21%;
-  float: right;
-  bottom: 2%;
-  right: 3%;
 }
 
 .locItem{
@@ -75,4 +86,13 @@ page {
   padding-left: 12%; 
   width: 27%;
   height: 80%;
+}
+
+.edit_image{
+  padding-right: 3%;
+  width: 7%;
+  height: 21%;
+  float: right;
+  bottom: 2%;
+  right: 3%;
 }

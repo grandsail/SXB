@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 var app = getApp()
 
 
+=======
+var app = getApp();
+>>>>>>> master
 Page({
-
+  
 data: {
   date: '2018-09-01',
     time: '12:01',
@@ -72,7 +76,7 @@ userNumInput: function (e) {
 clickMe: function (e) {
   const db = wx.cloud.database()
   wx.cloud.callFunction({
-    name:"distribute",
+    name:"distributeCar",
     data:{
       time: this.data.time,
       postnum: this.data.userNum,
@@ -80,7 +84,9 @@ clickMe: function (e) {
     },
     success: res => {
       this.setData({
-        back:res.result
+        back:res.result,
+       
+     
       })
       console.log('调用云函数成功: ', res)
       db.collection('orders').add({
@@ -100,6 +106,11 @@ clickMe: function (e) {
         },
 
         success: res => {
+          this.setData({
+            counterId: res._id,
+            
+          })
+         
           // 在返回结果中会包含新创建的记录的 _id
           wx.showToast({
             title: '预约成功',
@@ -123,7 +134,7 @@ clickMe: function (e) {
   })
 },
   toFrontpage:function(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '../frontpage/frontpage',
     })
   },
