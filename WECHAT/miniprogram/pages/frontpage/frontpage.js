@@ -129,7 +129,7 @@ Page({
     let id = e.currentTarget.dataset.id
     const db = wx.cloud.database()
     wx.navigateTo({
-      url: '../gg/gg?id=' + id,
+      url: '../change/change?id=' + id,
     })
   }
 })

@@ -18,7 +18,7 @@
         <view class="ar_date_time">
             <view class="ar_date">
                 
-                <picker mode="date" placeholder="选择日期" value="{{date}}" start="2018-11-14" end="2019-11-14" bindchange="bindDateChange" >
+                <picker mode="date" placeholder="选择日期" value="{date}}" start="2018-11-14" end="2019-11-14" bindchange="bindDateChange" >
                     <view>
                         {{date}}
                     </view>

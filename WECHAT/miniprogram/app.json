@@ -7,7 +7,7 @@
     "pages/updateuserinfo/updateuserinfo",
     "pages/history/history",
     "pages/detail/detail",
-    "pages/gg/gg"
+    "pages/change/change"
 
   ],
   "window": { 
