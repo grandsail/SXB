@@ -3,11 +3,10 @@
     "pages/frontpage/frontpage",
     "pages/book/book",
     "pages/recievingloc/recievingloc",
-    "pages/userinfo/userinfo",
-    "pages/updateuserinfo/updateuserinfo",
     "pages/history/history",
     "pages/detail/detail",
     "pages/center/center"
+    "pages/gg/gg"
   ],
   "window": { 
     "backgroundColor": "#F6F6F6",

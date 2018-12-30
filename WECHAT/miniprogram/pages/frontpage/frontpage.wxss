@@ -11,7 +11,7 @@ page {
   height: 100%;
 }
 .bottomLine{
-  float: right;
+  float:right;
   position: fixed;
   flex-direction: row;
   height:10%;

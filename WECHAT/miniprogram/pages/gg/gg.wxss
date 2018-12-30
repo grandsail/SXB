@@ -1,0 +1,106 @@
+.container{
+    background:#fff
+}
+
+.form_group{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin:8%;
+      }
+
+      .form_group text{
+    
+    width:-4%;
+    color: #000
+}
+
+.form_blank{
+  margin-bottom: 14%;
+}
+.form_group input,
+.form_group picker{
+    width:460rpx;
+    border:1px solid #ddd;
+    border-radius:8rpx;
+    height:60rpx;
+    line-height: 60rpx;
+    padding:0rpx 20rpx;
+}
+.form_group .sendmsg_input{
+    width:280rpx;
+    margin-right:14rpx;
+}
+
+.placeholder_style{
+    font-family:'微软雅黑';
+    color:#adadad;
+
+}
+.tapLogin{
+    width:80%;
+    background:#d24a58;
+    font-size: 120%;
+    color:rgb(150, 37, 37);
+    border-radius: 0%;
+    margin:10%
+}
+
+.ar_cont{
+    padding:3% ;
+    font-size:80%;
+    background: #fff;
+    margin-bottom:-12%;
+    line-height: 160%;
+    color:#666666;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.ar_cont .ar_cont_h1{
+    font-size: 110%;
+    font-weight: 600;
+    line-height: 200%;
+    color:#000;
+    margin: -4%;
+    
+}
+
+.form_group{
+    font-size: 88%;
+    font-weight: 600;
+    line-height: 172%;
+    color:#000;
+    margin-top: 8%;
+}
+
+.ar_date_time{
+    width:86%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:-1%;
+    margin-top: -9%;
+    margin-bottom: 15%;
+    margin-left: 9%;
+}
+.ar_date_time .ar_date,
+.ar_date_time .ar_time{
+    width:47%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.ar_date_time picker{
+    width:180rpx;
+    border:1px solid #ddd;
+    border-radius:8%;
+    padding:3% 5%;
+    margin-left:68rpx;
+    height: 46rpx;
+}
+.input_msg{
+    border:1px solid #ddd; 
+    border-radius:8rpx;
+    padding:0rpx 10rpx;
+}

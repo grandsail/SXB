@@ -37,7 +37,7 @@
           <image style = 'width:44%; height:100%; margin-left:28%'src='../source/plus.jpg'></image>
         </view>
       </view>
-      <view style='height:10%;'></view>
+      <view style='height:10%'></view>
   </view>
 </block>  
 

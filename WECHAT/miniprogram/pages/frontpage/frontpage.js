@@ -4,7 +4,6 @@ Page({
   onLoad: function (options) {
     // 获取初始订单信息
     this.refreshData()
-    
   },
 
   onReady: function () {
@@ -68,7 +67,6 @@ Page({
     })
   },
 
-
   //按加号跳转至book页面
   changeToIndex: function () {
     wx.navigateTo({
@@ -84,7 +82,6 @@ Page({
     })
   },
 
-  
   deleteclass: function (e) {
     var id=e.currentTarget.dataset.id
    
@@ -123,6 +120,13 @@ Page({
         }
         
       }
+
+    })
+  }, onUpdate: function (e) {
+    let id = e.currentTarget.dataset.id
+    const db = wx.cloud.database()
+    wx.navigateTo({
+      url: '../gg/gg?id=' + id,
     })
   }
 })
