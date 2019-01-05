@@ -58,14 +58,6 @@
     color:#adadad;
 
 }
-.tapLogin{
-    width:80%;
-    background:#d24a58;
-    font-size: 120%;
-    color:rgb(150, 37, 37);
-    border-radius: 0%;
-    margin:10%
-}
 
 .ar_cont{
     padding:3% ;
@@ -122,47 +114,43 @@ page {
   height: 100%
 }
 
-.button{
-  width: 60%;
-  height: 5%;
-  background-color:beige;
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-  margin-left: 20%;
-}
+
+
 
 .name{
-  width: 100%;
+  width: 30%;
   height: 10%;
   padding-top: 2%;
   padding-left: 3%; 
+  color: #c0871c;
 }
 
 .phonenum{
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 10%;
   padding-top: 5%;
   padding-left: 3%; 
+  color: #c0871c;
 }
 
 .address{
   height: 10%;
   padding-top: 5%;
   padding-left: 3%; 
+  color: #c0871c;
 }
 
 
 .edit_image{
   padding-right: 3%;
-  width: 7%;
-  height: 21%;
-  float: right;
   bottom: 2%;
   right: 3%;
+  width: 7%;
+  height: 22%;
+  float: right;
 }
 
-.locItem{
+.locItem_select{
   width: 80%;
   height: 16%;
   background-color:#fff2cc;
@@ -170,8 +158,18 @@ page {
   margin-top: 3%;
   margin-left: 10%;
   margin-right: 10%;
-  color: #c0871c;
 }
+.locItem_unselect{
+  width: 80%;
+  height: 16%;
+  background-color:#ddd;
+  border-radius: 5%;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
 
 .text{
 font-size: 88%;
@@ -181,6 +179,57 @@ display: flex;
 justify-content: center;
 font-weight: 600;
 margin-bottom: 5%;
+}
+
+.submit{
+  margin-top: 10%;
+}
+.add_image{
+  padding-right: 3%;
+  margin-left: 25%;
+  padding-top: 3%;
+  padding-left: 12%; 
+  width: 27%;
+  height: 80%;
+}
+.add{
+  width: 80%;
+  height: 16%;
+  background-color:#e7e6e6;
+  border-radius: 5%;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
 
+
+.form_item{
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  align-items: center;
+  height: 10%;
+  margin-top: 3%;
+}
+
+.form_text{
+  width: 20%;
+}
+
+.form_input{
+  width: 70%;
+  border:1px solid #ddd;
+}
+
+.button{
+  width: 40%;
+  height: 8%;
+  background-color:beige;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 5%;
+  margin-left: 30%;
+  border-radius: 5%;
 }

@@ -18,7 +18,7 @@
 
 <block wx:if="{{IsEdit==0&&IsAdd==0}}">
   <block wx:for="{{queryResult}}">
-    <view class='locItem' bindtap='edit' data-id='{{item._id}}' data-name='{{item.userName}}' data-phonenum='{{item.userPhoneNum}}' data-address='{{item.userAddress}}'>
+    <view class='locItem' bindtap='edit' data-id='{{item._id}}' data-name='{{item.userName}}' data-phonenum='{{item.userPhoneNum}}' data-address='{{item.userAddress}}' data-select='{{item.select}}'>
         <view class='name'>{{item.name}}</view>
         <view class='phonenum'>{{item.phonenum}}</view>
         <view class='address'>地址：{{item.address}}</view>

@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 var app = getApp()
-
-
-=======
-var app = getApp();
->>>>>>> master
 Page({
   
 data: {
   date: '2018-09-01',
-    time: '12:01',
+  time: '12:00',
   num: '',
   phonenum:'',
   name: '',
@@ -18,9 +12,21 @@ data: {
   car: '',
   box: '',
   back: '',
-  canUesAddr: ''
+  canUseAddr: '',
+  IsAdd: 0,
+  IsEdit: 0,
+  select: false,
+   clickId: ''
+ 
+  
+
   },
 
+  onPullDownRefresh: function () {
+    //下拉刷新订单
+    this.refreshData()
+    wx.stopPullDownRefresh()
+  },
   onLoad: function (options) {
     // 获取初始订单信息
     this.refreshData()
@@ -41,20 +47,25 @@ bindTimeChange: function (e) {
   }
 ,
 
+ 
   
-  //刷新数据，访问数据库，寻找与本机_openid相同的收件地点记录，存储在queryResult数组内
+  //刷新数据，访问数据库，寻找与本机_openid相同的收件地点记录，存储在canUseAddr数组内
   refreshData: function () {
     const db = wx.cloud.database()
     db.collection('recievingloc').where({
-      openid: this.data.openid
-    }).get({
+      _openid:this.data.openid
+   
+    }).
+    get({
       success: res => {
         this.setData({
-          canUesAddr: res.data
+          canUseAddr: res.data
         })
-        this.data.name = canUesAddr[0].name
-        this.data.phonenum = canUesAddr[0].phonenum
-        this.data.address = canUesAddr[0].address
+
+        var b=this.data.clickId;
+        this.data.name = canUseAddr[b].name
+        this.data.phonenum = canUseAddr[b].phonenum
+        this.data.address = canUseAddr[b].address
         console.log('[数据库] [查询记录] 成功: ', res)
       },
       fail: err => {
@@ -63,6 +74,20 @@ bindTimeChange: function (e) {
     })
   },
   
+  addrSelect: function (res) {
+    
+    var select = this.data.boolean;
+    this.setData({
+      
+      select:!select
+
+    })
+console.log(res)
+this.setData({
+  clickId:res.currentTarget.id,
+ 
+})
+  },
   
 //获取输入的数据
 userNumInput: function (e) {
@@ -73,7 +98,7 @@ userNumInput: function (e) {
   },
 
 //提交订单并跳转到首页
-clickMe: function (e) {
+submit: function (e) {
   const db = wx.cloud.database()
   wx.cloud.callFunction({
     name:"distributeCar",
@@ -139,11 +164,129 @@ clickMe: function (e) {
     })
   },
 
-  toChange:function(){
+toChange:function(){
 wx.navigateTo({
-  url:'../recievingloc/recievingloc',
+  url:'../addrselect/addrselect',
 })
 
-  }
+  },
+
+  AddRecievingLoc(e) {
+    var a = this.data.IsAdd;
+    a = (a + 1) % 2;
+ 
+    this.setData({
+      IsAdd: a
+    })
+  },
+  userPhoneNumInput: function (e) {
+    this.setData({
+      reg_phonenum: e.detail.value
+    })
+  },
+
+  userNameInput: function (e) {
+    this.setData({
+      reg_name: e.detail.value
+    })
+  },
+
+  userAddressInput: function (e) {
+    this.setData({
+      reg_address: e.detail.value
+    })
+  },
+
+  cancel() {
+    this.setData({
+      IsAdd: 0,
+      IsEdit: 0,
+    })
+  },
+
+  saveadd: function (e) {
+    const db = wx.cloud.database()
+    db.collection('recievingloc').add({
+      data: {
+        name: this.data.reg_name,
+        phonenum: this.data.reg_phonenum,
+        address: this.data.reg_address
+      },
+      success: res => {
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        this.setData({
+          reg_name: '',
+          reg_phonenum: '',
+          reg_address: '',
+        })
+      },
+      fail: err => {
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+    })
+    this.setData({
+      IsEdit: 0,
+      IsAdd: 0
+    })
+  },
+
+
+
+  edit(e) {
+    var id = e.currentTarget.dataset.id;
+    var name = e.currentTarget.dataset.name;
+    var phonenum = e.currentTarget.dataset.phonenum;
+    var address = e.currentTarget.dataset.address;
+
+    const db = wx.cloud.database()
+    //db.collection('recievingloc').doc(id).remove({
+    // success: res => {
+    this.setData({
+      IsEdit: 1,
+      reg_name: name,
+      reg_phonenum: phonenum,
+      reg_address: address,
+      reg_id: id,
+      select: false
+    })
+    },
+
+  save_edit: function (e) {
+    const db = wx.cloud.database()
+    db.collection('recievingloc').doc(this.data.reg_id).remove({})
+    db.collection('recievingloc').add({
+      data: {
+        name: this.data.reg_name,
+       phonenum: this.data.reg_phonenum,
+        address: this.data.reg_address
+      },
+      success: res => {
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        this.setData({
+          reg_name: '',
+          reg_phonenum: '',
+          reg_address: '',
+          reg_id: '',
+        })
+      },
+      fail: err => {
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+    })
+    this.setData({
+      IsEdit: 0,
+      IsAdd: 0
+    })
+  },
+toAddr:function()
+{
+  wx.navigateTo({
+    url: '../addrselect/addrselect',
+    success: function(res) {},
+    fail: function(res) {},
+    complete: function(res) {},
+  })
+}
+
 
   })

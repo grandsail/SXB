@@ -44,6 +44,7 @@ Page({
     var name = e.currentTarget.dataset.name;
     var phonenum = e.currentTarget.dataset.phonenum;
     var address = e.currentTarget.dataset.address;
+
     const db = wx.cloud.database()
     //db.collection('recievingloc').doc(id).remove({
      // success: res => {
@@ -53,6 +54,7 @@ Page({
       reg_phonenum:phonenum,
       reg_address:address,
       reg_id:id,
+     
     })
       //},
     //})
@@ -94,12 +96,15 @@ Page({
   },
 
   saveadd: function (e) {
+
+
     const db = wx.cloud.database()
     db.collection('recievingloc').add({
       data: {
         name: this.data.reg_name,
         phonenum: this.data.reg_phonenum,
-        address: this.data.reg_address
+        address: this.data.reg_address,
+        select:0
       },
       success: res => {
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
@@ -123,10 +128,12 @@ Page({
     const db = wx.cloud.database()
     db.collection('recievingloc').doc(this.data.reg_id).remove({})
     db.collection('recievingloc').add({
+      
       data: {
         userName: this.data.reg_name,
         userPhoneNum: this.data.reg_phonenum,
         userAddress: this.data.reg_address
+      
       },
       success: res => {
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
