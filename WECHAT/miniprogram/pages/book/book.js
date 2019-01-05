@@ -17,10 +17,7 @@ data: {
   IsEdit: 0,
   select: false,
    clickId: ''
- 
-  
-
-  },
+ },
 
   onPullDownRefresh: function () {
     //下拉刷新订单
@@ -47,7 +44,22 @@ bindTimeChange: function (e) {
   }
 ,
 
- 
+  addrSelect: function (res) {
+
+    var select = this.data.boolean;
+  
+    this.setData({
+
+      select: !select
+
+    })
+    console.log(res)
+    this.setData({
+      clickId: res.currentTarget.id,
+       
+    })
+     var b=this.data.clickId
+  },
   
   //刷新数据，访问数据库，寻找与本机_openid相同的收件地点记录，存储在canUseAddr数组内
   refreshData: function () {
@@ -62,7 +74,7 @@ bindTimeChange: function (e) {
           canUseAddr: res.data
         })
 
-        var b=this.data.clickId;
+        
         this.data.name = canUseAddr[b].name
         this.data.phonenum = canUseAddr[b].phonenum
         this.data.address = canUseAddr[b].address
@@ -74,20 +86,7 @@ bindTimeChange: function (e) {
     })
   },
   
-  addrSelect: function (res) {
-    
-    var select = this.data.boolean;
-    this.setData({
-      
-      select:!select
-
-    })
-console.log(res)
-this.setData({
-  clickId:res.currentTarget.id,
  
-})
-  },
   
 //获取输入的数据
 userNumInput: function (e) {
@@ -164,12 +163,6 @@ submit: function (e) {
     })
   },
 
-toChange:function(){
-wx.navigateTo({
-  url:'../addrselect/addrselect',
-})
-
-  },
 
   AddRecievingLoc(e) {
     var a = this.data.IsAdd;
@@ -277,16 +270,8 @@ wx.navigateTo({
       IsEdit: 0,
       IsAdd: 0
     })
-  },
-toAddr:function()
-{
-  wx.navigateTo({
-    url: '../addrselect/addrselect',
-    success: function(res) {},
-    fail: function(res) {},
-    complete: function(res) {},
-  })
-}
+  }
+
 
 
   })

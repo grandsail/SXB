@@ -1,14 +1,11 @@
 {
-  "pages": ["pages/book/book",
+  "pages": [
     "pages/frontpage/frontpage",
-    
-    
-    
+    "pages/book/book",
     "pages/recievingloc/recievingloc",
     "pages/history/history",
     "pages/detail/detail",
-    "pages/center/center",
-    "pages/gg/gg",
+    "pages/center/center"
     
   ],
   "window": { 
