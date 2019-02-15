@@ -131,5 +131,10 @@ Page({
     wx.navigateTo({
       url: '../change/change?id=' + id,
     })
+  }, detail: function (e) {
+    let id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: '../detail/detail?id=' + id,
+    })
   }
 })

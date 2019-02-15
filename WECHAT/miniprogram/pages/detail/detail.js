@@ -163,5 +163,41 @@ Page({
       "queryResult": ''
     })
     console.log('form发生了reset事件')
-  }
+  }, changeTohistory: function () {
+    wx.navigateTo({
+      url: '../history/history'
+    })
+  }, onUpdate: function (e) {
+    let id = e.currentTarget.dataset.id
+    const db = wx.cloud.database()
+    wx.navigateTo({
+      url: '../change/change?id=' + this.data.id,
+    })
+  },
+  onRemove: function (e) {
+    let id = e.currentTarget.dataset.id
+    const db = wx.cloud.database()
+    db.collection('orders').doc(this.data.id).remove({
+      success: res => {
+        wx.showToast({
+          title: '删除成功',
+        })
+        this.setData({
+          counterId: '',
+          count: null,
+        })
+        wx.navigateTo({
+          url: '../frontpage/frontpage',
+        })
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '删除失败',
+        })
+        console.error('[数据库] [删除记录] 失败：', err)
+      }
+    })
+
+  },
 })

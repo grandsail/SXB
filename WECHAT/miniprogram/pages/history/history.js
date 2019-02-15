@@ -164,5 +164,5 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?id='+id,
     })
-  }
+  },
 })

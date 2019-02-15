@@ -1,25 +1,31 @@
 Page({
   data: {
-    date: '2018-09-02',
+    date: '123',
     time: '12:01',
     num: '',
     phonenum: '',
     name: '',
     address: '',
-    state: 1,
-    id: ''
+    state: 2,
+    car: '',
+    box: '',
+    back: '',
+    queryResult:''
   },
   onLoad: function (options) {
-    this.data.id = options.id;
-    var query = this.onQuery();
-    this.data.date = query[0].date,
-      this.data.time = query[0].time
-    this.onQuery();
+    this.data.id = options.id
    
+   this.onQuery()
+    var b = queryResult[0].date
+   this.setData({
+     date: b
+
+   })
+   
+     
+    
   },
-
-
-  
+ 
   //picker选择时间日期
   bindDateChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -153,7 +159,7 @@ Page({
         console.error('[数据库] [查询记录] 失败：', err)
       }
     })
-    return res.data
+
   },
 
 })
