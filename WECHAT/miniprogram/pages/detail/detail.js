@@ -66,7 +66,7 @@ Page({
     inputValue: '',
     queryResult: '',
     count: 0,
-    id:''
+    id:'',
   },
 
   onQuery: function () {
@@ -96,7 +96,7 @@ Page({
     let id = e.currentTarget.dataset.id
     const db = wx.cloud.database()
     wx.navigateTo({
-      url: '../change/change?id=' + this.data.id,
+      url: '../change/change?id=' + this.data.id+'&date='+this.data.queryResult[0].date+'&time='+this.data.queryResult[0].time
     })
   },
   onRemove: function (e) {

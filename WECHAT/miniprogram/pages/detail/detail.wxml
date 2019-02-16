@@ -1,38 +1,38 @@
 
 <!--miniprogram/pages/test/test.wxml-->
-<view class="bjc">
+<view class="Background">
 
   <!--加个详细信息的按钮-->
 
   <block wx:for="{{queryResult}}" >
     <view >
-      <view class='tygs' >
-          <view style='display: flex; flex-direction: row;' > 
-            <view  class='c' >单号：  </view>
-            <text class='c1'>{{item.postnum}} </text>
+      <view class='AllStyle' >
+          <view class='Style' > 
+            <view  class='Top' >单号：  </view>
+            <text class='Follow'>{{item.postnum}} </text>
             </view>
 
-          <view style='display: flex; flex-direction: row;'> 
-            <view class='c'>取件时间： </view>
-            <text class='c1'>{{item.date}} {{item.time}}</text>
+          <view class='Style'> 
+            <view class='Top'>取件时间： </view>
+            <text class='Follow'>{{item.date}} {{item.time}}</text>
              </view>
           <!--快递柜号-->
-           <view style='display: flex; flex-direction: row;'> 
-            <view class='c'> 电话： </view>
-            <text class='c1'>{{item.phonenum}}</text>
+           <view class='Style'> 
+            <view class='Top'> 电话： </view>
+            <text class='Follow'>{{item.phonenum}}</text>
           </view>
-          <view style='display: flex; flex-direction: row;'> 
-            <view class='c'> 姓名：  </view>
-            <text class='c1'>{{item.name}}</text>
+          <view class='Style'> 
+            <view class='Top'> 姓名：  </view>
+            <text class='Follow'>{{item.name}}</text>
           </view>
-          <view style='display: flex; flex-direction: row;'> 
-            <view class='c'> 地址：  </view>
-            <text class='c1'> {{item.address}}</text>
+          <view class='Style'> 
+            <view class='Top'> 地址：  </view>
+            <text class='Follow'> {{item.address}}</text>
             </view>
       </view>
     </view>
-    <button style='height:10%;margin:5%;' bindtap='onUpdate'>更改</button>
-    <button style='height:10%;margin:5%;' bindtap='onRemove'>删除</button>
+    <button class='ButtonStyle' bindtap='onUpdate'>更改</button>
+    <button class='ButtonStyle' bindtap='onRemove'>删除</button>
    
   </block>
 

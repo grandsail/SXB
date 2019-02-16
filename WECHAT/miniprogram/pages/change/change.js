@@ -1,7 +1,7 @@
 Page({
   data: {
-    date: '123',
-    time: '12:01',
+    date: '',
+    time: '',
     num: '',
     phonenum: '',
     name: '',
@@ -16,9 +16,9 @@ Page({
     this.data.id = options.id
    
    this.onQuery()
-    var b = queryResult[0].date
    this.setData({
-     date: b
+     date: options.date,
+     time:options.time
 
    })
    

@@ -6,34 +6,32 @@ page {
   justify-content: flex-start;
   height: 100%
 }
-.bjc{
+.Background{
 height: 100%;
 display: flex;
 flex-direction: column;
 }
-
-.into{
-  text-align:center;
-  height: 4%;
-  margin: 3%;
-  font-size: 100%;
-  border-radius: 7%;
-  background-color: #e7b75d;
-}
-
-.tygs{
+.AllStyle{
   height: 100%;
   background-color: #F6F6F6;
   width: 100%;
   border-radius: 5%;
 }
-.c{
+.Style{
+  display: flex;
+   flex-direction: row
+}
+.Top{
   margin-left: 3%;
   margin-top: 3%;
   margin-bottom: 3%;
 }
-.c1{
+.Follow{
   margin-top: 3%;
   margin-bottom: 3%;
   color:  #c0871c;
+}
+.ButtonStyle{
+  height:10%;
+  margin:5%;
 }
