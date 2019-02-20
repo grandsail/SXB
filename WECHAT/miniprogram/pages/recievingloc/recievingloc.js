@@ -54,7 +54,6 @@ Page({
       reg_phonenum:phonenum,
       reg_address:address,
       reg_id:id,
-     
     })
       //},
     //})
@@ -103,8 +102,7 @@ Page({
       data: {
         name: this.data.reg_name,
         phonenum: this.data.reg_phonenum,
-        address: this.data.reg_address,
-        select:0
+        address: this.data.reg_address
       },
       success: res => {
         console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
@@ -130,9 +128,9 @@ Page({
     db.collection('recievingloc').add({
       
       data: {
-        userName: this.data.reg_name,
-        userPhoneNum: this.data.reg_phonenum,
-        userAddress: this.data.reg_address
+        name: this.data.reg_name,
+        phonenum: this.data.reg_phonenum,
+        address: this.data.reg_address
       
       },
       success: res => {

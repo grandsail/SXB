@@ -1,28 +1,8 @@
 .container{
     background:#fff
 }
-.ar_picker{
-    width:100%;
-    font-size:30rpx;
-    color:#000;
-    background: #efeff4;
-    margin:0;
-}
-.ar_picker .ar_picker_wrap{
-    width: 670rpx;
-    background: #fff url(../../images/arrow.png) no-repeat right center;
-    background-size:25rpx 14rpx;
-    background-position:650rpx;
-    border-radius:20rpx;
-    padding:20rpx;
-    margin:20rpx auto;
-}
 
-
-.form_blank{
-  margin-bottom: 14%;
-}
-.form_group{
+.postNumInput{
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -30,84 +10,61 @@
     font-size: 88%;
     font-weight: 600;
     line-height: 172%;
-    color:#000;
-    margin-top: 8%;
-      }
-.form_group text{
+     color: #000;
+    margin-top: 14%;}
+
+
+
+.recTimeSelect text{
     
-    width:-4%;
-    color: #000
+   font-size: 88%;
+    color: #000;
+    float:left;
+     font-weight: 600;
+     margin-left:8%;
 }
 
-.form_group input,
-.form_group picker{
-    width:460rpx;
+
+.picker{
+    padding: 10%;
+    background-color: #FFFFFF;}
+
+
+.dateSelect{
+   
     border:1px solid #ddd;
-    border-radius:8rpx;
-    height:60rpx;
-    line-height: 60rpx;
-    padding:0rpx 20rpx;
+border-radius:8rpx;
+border-width: 50%;
+float:left;
+margin-left: 2%;
 }
-.form_group .sendmsg_input{
-    width:280rpx;
-    margin-right:14rpx;
+.timeSelect{
+  
+    border:1px solid #ddd;
+border-radius:8rpx;
+border-width: 50%;
+float:right;
+margin-right: 17%;
 }
+
+
+
 
 .placeholder_style{
     font-family:'微软雅黑';
-    color:#adadad;
+    color:darkgray;
+    margin-left: 4%;
 
 }
 
-.ar_cont{
-    padding:3% ;
-    font-size:80%;
-    background: #fff;
-    margin-bottom:-12%;
-    line-height: 160%;
-    color:#666666;
-    margin-top: 10%;
-    margin-left: 5%;
-}
-.ar_cont .ar_cont_h1{
-    font-size: 110%;
-    font-weight: 600;
-    line-height: 200%;
-    color:#000;
-    margin: -4%;
-    
-}
-.ar_date_time{
-    width:86%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin:-1%;
-    margin-top: -9%;
-    margin-bottom: 15%;
-    margin-left: 9%;
-}
-.ar_date_time .ar_date,
-.ar_date_time .ar_time{
-    width:47%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+
+.postNumInput input{
+  border:1px solid #ddd;
+border-radius:8rpx;
+
+
 }
 
-.ar_date_time picker{
-    width:180rpx;
-    border:1px solid #ddd;
-    border-radius:8%;
-    padding:3% 5%;
-    margin-left:68rpx;
-    height: 46rpx;
-}
-.input_msg{
-    border:1px solid #ddd; 
-    border-radius:8rpx;
-    padding:0rpx 10rpx;
-}
 page {
   background-color:  white;
   justify-content: flex-start;
@@ -150,7 +107,7 @@ page {
   float: right;
 }
 
-.locItem_select{
+.locItemSelect{
   width: 80%;
   height: 16%;
   background-color:#fff2cc;
@@ -159,7 +116,7 @@ page {
   margin-left: 10%;
   margin-right: 10%;
 }
-.locItem_unselect{
+.locItemUnselect{
   width: 80%;
   height: 16%;
   background-color:#ddd;
@@ -171,7 +128,7 @@ page {
 
 
 
-.text{
+.recAddr text{
 font-size: 88%;
 width: 100%;
 margin-top: 10%;
@@ -181,9 +138,7 @@ font-weight: 600;
 margin-bottom: 5%;
 }
 
-.submit{
-  margin-top: 10%;
-}
+
 .add_image{
   padding-right: 3%;
   margin-left: 25%;
@@ -202,7 +157,9 @@ margin-bottom: 5%;
   margin-right: 10%;
 }
 
-
+.form_blank{
+  margin:14%;
+}
 
 .form_item{
   display: flex;
@@ -211,6 +168,7 @@ margin-bottom: 5%;
   align-items: center;
   height: 10%;
   margin-top: 3%;
+
 }
 
 .form_text{
@@ -223,13 +181,16 @@ margin-bottom: 5%;
 }
 
 .button{
-  width: 40%;
-  height: 8%;
-  background-color:beige;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  margin-top: 5%;
-  margin-left: 30%;
-  border-radius: 5%;
+width: 40%;
+height: 8%;
+background-color:beige;
+display: flex;
+justify-content: center; 
+align-items: center;
+margin-top: 5%;
+margin-left: 30%;
+border-radius: 5%;
+}
+.recTimeSelect{
+  margin-bottom:24%;
 }
