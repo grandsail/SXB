@@ -45,8 +45,6 @@ Page({
     var phonenum = e.currentTarget.dataset.phonenum;
     var address = e.currentTarget.dataset.address;
     const db = wx.cloud.database()
-    //db.collection('recievingloc').doc(id).remove({
-     // success: res => {
     this.setData({
       IsEdit:1,
       reg_name:name,
@@ -54,8 +52,6 @@ Page({
       reg_address:address,
       reg_id:id,
     })
-      //},
-    //})
   },
 
 
@@ -64,7 +60,7 @@ Page({
     var a = this.data.IsAdd;
     a = (a + 1) %2;
     this.setData({
-      IsAdd:a
+      IsAdd:a,
     })
   },
 
@@ -115,7 +111,7 @@ Page({
     })
     this.setData({
       IsEdit:0,
-      IsAdd:0
+      IsAdd:0,
     })
   },
 
@@ -143,7 +139,7 @@ Page({
     })
     this.setData({
       IsEdit: 0,
-      IsAdd: 0
+      IsAdd: 0,
     })
   },
 })
