@@ -127,6 +127,10 @@ confirmSub: function (e) {
            wx.showToast({
             title: '预约成功',
           })
+            wx.navigateTo({
+              url: '../frontpage/frontpage',
+            })
+         
           console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
         },
         fail: err => {
@@ -138,6 +142,7 @@ confirmSub: function (e) {
         }
 
       })
+      
 
     },
     fail: err => {
@@ -146,7 +151,9 @@ confirmSub: function (e) {
   })
 },
   
+ 
   
+
 //新增常用收件地址
 addRecievingLoc(e) {
     var a = this.data.IsAdd;
